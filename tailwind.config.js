@@ -1,3 +1,6 @@
+
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,66 +12,59 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Custom breakpoints
+      // ✅ Custom breakpoints
       screens: {
-        '4xs': '320px',
-        '3xs': '360px',
-        '2xs': '408px',
-        'xs': '475px',
-        '3xl': '1600px',
-        '4xl': '1920px',
+        xs: '480px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
+      colors: {
+        lightGray: '#F0F0F0',
+          semiBlack: '#00000099',
       },
 
-      // Custom fonts
+      // ✅ Custom fonts
       fontFamily: {
         roboto: ['"Roboto"', 'sans-serif'],
+        satoshi: ['"Satoshi"', 'sans-serif'], // <-- added Satoshi
+         roboto: ["Roboto", "sans-serif"],
+        satoshi: ["Satoshi", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"], 
+         integral: ["IntegralCF", "sans-serif"],
       },
 
-      // Custom animations
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'slide-down': 'slideDown 0.5s ease-out',
-        'scale-in': 'scaleIn 0.3s ease-out',
-        'bounce-subtle': 'bounceSubtle 2s infinite',
-        'scroll-left-to-right': 'scrollLeftToRight 60s linear infinite',
-      },
-
+      // ✅ Keyframes
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        "infinite-scroll-reverse": {
+          from: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(0)" },
         },
-        slideDown: {
-          '0%': { transform: 'translateY(-20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        scaleIn: {
-          '0%': { transform: 'scale(0.9)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
-        bounceSubtle: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
-        },
-        scrollLeftToRight: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
+        // marquee: {
+        //   "0%": { transform: "translateX(0)" },
+        //   "100%": { transform: "translateX(-50%)" },
+        // },
+      },
+
+      // ✅ Animations
+      animation: {
+        "infinite-scroll": "infinite-scroll 50s linear infinite",
+        "infinite-scroll-reverse": "infinite-scroll-reverse 20s linear infinite ",
+        
+        marquee: "marquee 20s linear infinite",
       },
     },
   },
-  plugins: [
-    // Add any additional plugins here
-  ],
-  // Optimize for production
+  plugins: [],
   corePlugins: {
     preflight: true,
   },
-  // JIT mode for faster builds
-  mode: 'jit',
+  // ⚠️ In Tailwind v3+, JIT is default — no need to add this
+  // mode: 'jit',
 };

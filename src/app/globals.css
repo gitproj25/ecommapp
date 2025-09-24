@@ -1,24 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
-
-
   html {
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 100%;
   }
-
   body {
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
   /* Heading Styles */
   h1,
   h2,
@@ -32,13 +27,8 @@
     margin-top: 0;
     margin-bottom: 0.5em;
   }
-
 }
-
-
-
 @layer components {
-
   /* Focus Reset - Remove default focus outlines */
   button:focus,
   a:focus,
@@ -49,9 +39,7 @@
     box-shadow: none;
   }
 }
-
 @layer utilities {
-
   /* Text Optimization */
   .text-optimized {
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
@@ -59,12 +47,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
   /* Text Balance for Headlines */
   .text-balance {
     text-wrap: balance;
   }
-
   /* Prevent Orphans */
   .text-no-orphans {
     text-wrap: pretty;

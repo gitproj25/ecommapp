@@ -1,8 +1,18 @@
+
+
 import type { Metadata } from 'next';
 import './globals.css';
 import './font.css';
 
 import ThemeProviderWrapper from '@/components/common/ThemeProviderWrapper';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import Newsletter from '@/components/ui/NewsLetter';
+import { Provider } from 'react-redux'
+import { store } from '../redux/store/store'
+import ReduxProvider from '@/components/ReduxProvider';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: '',
@@ -28,9 +38,30 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+         <ReduxProvider>
         <ThemeProviderWrapper>
+          <Header/>
           {children}
+        <div className="relative">
+  <Newsletter />
+  <Footer />
+</div>
+ {/* ToastContainer added here */}
+            {/* <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            /> */}
         </ThemeProviderWrapper>
+        </ReduxProvider>
+        
       </body>
     </html>
   );
