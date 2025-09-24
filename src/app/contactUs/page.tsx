@@ -1,10 +1,11 @@
+import React from 'react'
 
-import MainLayout from "@/layouts/MainLayout";
-
-export default function ContactPage() {
+const page = () => {
   return (
-    <MainLayout>
-     <h1>Hello</h1>
-    </MainLayout>
-  );
+    <div>
+      
+    </div>
+  )
 }
+
+export default page
