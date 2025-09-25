@@ -15,18 +15,18 @@ export default function ReviewCarousel() {
   const scrollReviews = [...reviews, ...reviews,...reviews, ]; // duplicate for infinite scroll
 
   return (
-    <section className="w-full relative overflow-hidden py-10 ">
+    <section className="w-full relative overflow-hidden py-8 ">
      
       {/* <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-6">
   OUR HAPPY <br className="block sm:hidden" /> CUSTOMERS
 </h2> */}
-<h2 className=" max-w-[clamp(360px,92%,2140px)] mx-auto px-2  text-[clamp(1.5rem,4vw,3rem)]  font-extrabold text-start mb-6 ">
+<h2 className=" max-w-[clamp(360px,92%,2140px)] mx-auto px-2  text-[clamp(1.3rem,4vw,3rem)]  font-extrabold text-start mb-6 ">
   OUR HAPPY <br className="block sm:hidden" /> CUSTOMERS
 </h2>
 
       {/* Carousel viewport */}
       <div className="relative w-full flex justify-center overflow-hidden ">  
-        <div className="flex w-max animate-infinite-scroll gap-8 ">
+        <div className="flex w-max animate-infinite-scroll pause-on-hover gap-8 ">
           {scrollReviews.map((r, i) => {
             // Calculate relative position in original array
             const pos = i % reviews.length;

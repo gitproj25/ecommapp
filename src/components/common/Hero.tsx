@@ -5,7 +5,7 @@
 
 "use client";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="w-full bg-[#F2F0F1]">
@@ -14,7 +14,7 @@ export default function Hero() {
         {/* Left Side */}
         <div className="flex flex-col justify-center">
           {/* Text + Button */}
-          <div className="space-y-4 text-start lg:text-left">
+          <div className="space-y-4 text-start lg:text-left pt-6">
             <h1 className="text-[clamp(2rem,4vw,3.8rem)] font-extrabold text-[#000000] leading-tight ">
               FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
             </h1>
@@ -24,9 +24,11 @@ export default function Hero() {
             </p>
 
             {/* Shop Now Button */}
-            <button className="w-full sm:w-48 px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-900">
+            <Link href="/casual">
+            <button className="w-full sm:w-48 px-6 py-3 bg-black mt-6 text-white rounded-full font-medium hover:bg-gray-900">
               Shop Now
             </button>
+            </Link>
           </div>
 
           {/* Stats (moved outside space-y-6 so it aligns with main div) */}
@@ -43,22 +45,26 @@ export default function Hero() {
   <div className="grid grid-cols-2 lg:grid-cols-3 items-center gap-6 text-center text-left">
     
     {/* 200+ */}
-    <div className="flex flex-col items-center sm:items-start">
+  
+    <div className="flex flex-col items-center lg:items-start  xl:border-r-2 border-gray-300 ml-8 lg:ml-0">
       <p className="font-bold text-[clamp(1.5rem,4vw,3rem)]">200+</p>
       <p className="text-[clamp(0.6rem,2vw,1rem)] text-[#00000099] whitespace-nowrap font-normal">
         International Brands
       </p>
     </div>
+
       {/* Vertical line */}
     {/* <div className="hidden sm:block w-px h-16 bg-gray-400 self-center"></div> */}
 
     {/* 2,000+ */}
-    <div className="flex flex-col items-center sm:items-start">
+    <div className="xl:border-r-2  border-gray-300 ">
+    <div className="flex flex-col items-center lg:items-start border-l-2 sm:border-none border-gray-300 ">
       <p className="font-bold text-[clamp(1.5rem,4vw,3rem)]">2,000+</p>
-      <p className="text-[clamp(0.6rem,2vw,1rem)] text-[#00000099] whitespace-nowrap font-normal">
+      <p className="text-[clamp(0.6rem,2vw,1rem)] text-[#00000099] whitespace-nowrap font-normal ">
         High-Quality Products
       </p>
-    </div>
+    </div></div>
+    {/* <div className="lg:border-l-2"></div> */}
         {/* Vertical line */}
     {/* <div className="hidden lg:block w-px h-16 bg-gray-400 self-center"></div> */}
     {/* 30,000+ */}
@@ -68,8 +74,10 @@ export default function Hero() {
         Happy Customers
       </p>
     </div>
+    <div className="lg:border-l-2"></div>
   </div>
 </div>
+
 
 
 

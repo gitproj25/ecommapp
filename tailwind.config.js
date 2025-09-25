@@ -55,13 +55,22 @@ module.exports = {
       // ✅ Animations
       animation: {
         "infinite-scroll": "infinite-scroll 50s linear infinite",
-        "infinite-scroll-reverse": "infinite-scroll-reverse 20s linear infinite ",
+        "infinite-scroll-reverse": "infinite-scroll-reverse 50s linear infinite ",
         
         marquee: "marquee 20s linear infinite",
       },
     },
   },
-  plugins: [],
+plugins: [
+  function ({ addUtilities }) {
+    addUtilities({
+      '.pause-on-hover:hover': {
+        'animation-play-state': 'paused',
+      },
+    });
+  },
+],
+
   corePlugins: {
     preflight: true,
   },

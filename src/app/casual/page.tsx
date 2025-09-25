@@ -12,8 +12,10 @@ import { useSearchParams } from "next/navigation";
 import { setProducts, filterByColor,sortByPrice,filterByPrice,filterBySize,filterByCategory,searchProducts,applyAllFilters} from "../../redux/store/productslice";
 
 export default function Casual() {
+    const searchParams = useSearchParams();
+  const from = searchParams.get("from") || "Casual"; // default text if no query
   const [selectedSize, setSelectedSize] = useState<string>("Large");
-   const searchParams = useSearchParams();
+
   const searchQuery = searchParams.get("search") || "";
   const [price, setPrice] = useState([50, 200]);
   const [selectedColor, setSelectedColor] = useState("blue");
@@ -36,7 +38,12 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 useEffect(() => {
   console.log("Filtered Products:", filteredProducts);
 }, [filteredProducts]);
-  
+   useEffect(() => {
+    const searchQuery = searchParams.get("search");
+    if (searchQuery) {
+      dispatch(searchProducts(searchQuery)); // trigger filter on mount
+    }
+  }, [searchParams, dispatch]);
  
   useEffect(() => {
     if (searchQuery) {
@@ -108,7 +115,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
 
         <div className="p-4 text-sm text-gray-500">
-    Home &gt; <span className="text-black font-medium">Casual</span>
+    Home &gt; <span className="text-black font-medium">{from}</span>
   </div>
       <div className="flex flex-col md:flex-row gap-6 justify-between">
           {/* Breadcrumb inside sidebar */}
@@ -371,7 +378,10 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
         {/* Main */}
         <main className="w-full md:w-[70%] lg:w-[75%] flex flex-col gap-6">
-          <h2 className="text-2xl font-bold mb-6 flex justify-between items-center text-[clamp(1.25rem,2vw,2rem)]">Casual
+          <h2 className="text-2xl font-bold mb-6 flex justify-between items-center text-[clamp(1.25rem,2vw,2rem)]">
+            
+            
+            {from}
             {/* <div className="flex items-center gap-4 text-[clamp(0.6rem,1.5vw,1rem)] text-gray-600 font-normal">
               <span>
                 Showing 1–10 of 100 Products

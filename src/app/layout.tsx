@@ -11,6 +11,8 @@ import Newsletter from '@/components/ui/NewsLetter';
 import { Provider } from 'react-redux'
 import { store } from '../redux/store/store'
 import ReduxProvider from '@/components/ReduxProvider';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 export const metadata: Metadata = {

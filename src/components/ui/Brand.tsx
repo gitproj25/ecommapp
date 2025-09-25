@@ -20,7 +20,7 @@ const logos = [
 
 export default function LogoCarousel() {
   return (
-    <div className="w-full overflow-hidden space-y-4 bg-black">
+    <div  id="brands" className="w-full overflow-hidden space-y-4 bg-black mb-8">
       {/* Main row (always visible) */}
       <div className="flex w-max animate-infinite-scroll  hover:animate-none py-4 md:py-12">
         {logos.concat(logos).map((logo, i) => (
