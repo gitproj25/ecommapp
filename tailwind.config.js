@@ -28,13 +28,12 @@ module.exports = {
 
       // ✅ Custom fonts
       fontFamily: {
-        roboto: ['"Roboto"', 'sans-serif'],
-        satoshi: ['"Satoshi"', 'sans-serif'], // <-- added Satoshi
-         roboto: ["Roboto", "sans-serif"],
-        satoshi: ["Satoshi", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"], 
-         integral: ["IntegralCF", "sans-serif"],
+       integral: ['var(--font-integral)', 'sans-serif'],
+  satoshi: ['var(--font-satoshi)', 'sans-serif'], // for bold text
       },
+
+
+      
 
       // ✅ Keyframes
       keyframes: {

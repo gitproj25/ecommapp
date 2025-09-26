@@ -22,6 +22,13 @@ export default function Casual() {
 const [selectedColors, setSelectedColors] = useState<string[]>([]);
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
  const [currentPage, setCurrentPage] = useState(1);
+
+ // Scroll to top when currentPage changes
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [currentPage]);
+
+ 
    const dispatch = useDispatch<AppDispatch>(); 
   const filteredProducts = useSelector(
     (state: RootState) => state.products.filteredProducts
@@ -478,11 +485,11 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
     </div>
   ))
 ) : (
-  <div className="w-full h-64 flex flex-col items-center justify-center gap-4">
-    <p className="text-gray-500 text-lg font-semibold">🚫 No products found</p>
+  <div className="w-full flex flex-col items-center justify-center gap-4 min-h-[60vh] md:min-h-[70vh]">
+    <p className="text-gray-500 text-lg font-semibold"> No products found</p>
     <Link
       href="/casual"
-      className="px-6 py-2 text-white rounded-full hover:bg-gray-800 transition"
+      className="px-6 py-2 mt-4 text-whit  rounded-full hover:bg-gray-800 transition"
     >
       Back to Products
     </Link>
@@ -491,7 +498,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
           </div>
 
-          <div className="border-b border-gray-300 pb-2 mb-4"></div>
+          {/* <div className="border-b border-gray-300 pb-2 mb-4"></div> */}
 
          {currentProducts.length > 0 && (
   <div className="w-full">

@@ -530,12 +530,21 @@
 
 
 
+
+
+
+
+
+
+
+
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Link from "next/link";
+
 
 export type Product = {
   id: number;
@@ -617,10 +626,10 @@ const products: Product[] = [
 
 export default function NewArrivals() {
   return (
-    <section  id="new-arrivals" className="py-2 mb-10">
+    <section  id="new-arrivals" className="py-2 mb-10 ">
       <div className=" md:max-w-[clamp(360px,90%,1400px)] mx-auto px-4 text-center">
         <h2 className="font-extrabold uppercase text-[clamp(1.6rem,2.6vw,6rem)] mb-8">
-        NEW ARRIVALS  
+        NEW ARRIVALS
         </h2>
 
         {/* Swiper only for <480px, grid for larger */}
@@ -680,7 +689,8 @@ export default function NewArrivals() {
 function ProductCard({ product }: { product: Product }) {
   return (
     <div className="bg-white rounded-lg overflow-hidden">
-      <div className="relative w-[93%]  sm:w-fullh-[12rem] sm:h-[16rem] lg:h-[18rem]">
+      <div className="relative w-[93%] sm:w-full h-[12rem] sm:h-[16rem] lg:h-[18rem]">
+        
       <Link href={`/productdetails/${product.id}`}>
         <Image
           src={product.image}
@@ -740,8 +750,6 @@ function ProductCard({ product }: { product: Product }) {
     </div>
   );
 }
-
-
 
 
 

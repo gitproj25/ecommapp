@@ -118,34 +118,37 @@ export default function Footer() {
       <div className="max-w-[clamp(360px,92%,2140px)] mt-20 mx-auto gap-8">
         {/* Grid wrapper */}   
         {/* Grid wrapper */}
-<div className="  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-4 mt-6">
+<div className="  flex flex-col lg:flex-row  ">
   {/* SHOP.CO */}
-  <div className="flex flex-col col-span-1 sm:col-span-2 lg:col-span-1">
-    <p className="font-extrabold text-black text-[clamp(1.6rem,3vw,1.8rem)]">
+  <div className=" w-[90%] md:w-[50%] lg:w-[20%] ">
+    <p className="font-extrabold text-black text-[clamp(1.7rem,3vw,1.9rem)] items-start justify-start">
       SHOP.CO
     </p>
-    <p className="text-[clamp(0.9rem,1.2vw,1rem)] font-normal text-gray-600 mt-1 lg:mt-3 leading-relaxed ">
+    <p className=" w-full lg:w-[170px] xl:w-[260px] text-[clamp(1rem,1vw,1.1em)] lg:text-[clamp(0.8rem,1vw,0.9rem)] xl:text-[clamp(1rem,1.2vw,1.3rem)] font-normal text-gray-600 mt-1 lg:mt-3 leading-relaxed ">
       We have clothes that suit your style and which you’re proud to
       wear From women to men.
     </p>
 
     {/* Social icons */}
-    <div className="flex gap-4 mt-2 lg:mt-4">
-      <Image src="/i.png" alt="Instagram" width={24} height={24} />
-      <Image src="/1.png" alt="Twitter" width={20} height={20} />
-      <Image src="/f.png" alt="Facebook" width={24} height={24} />
-      <Image src="/4.png" alt="github" width={24} height={24} />
-    </div>
+
+   <div className="flex gap-4 mt-2 lg:mt-4 lg:mb-0 mb-6">
+  <Image src="/i.png" alt="Instagram" width={36} height={36} />
+  <Image src="/1.png" alt="Twitter" width={36} height={36} />
+  <Image src="/f.png" alt="Facebook" width={36} height={36} />
+  <Image src="/4.png" alt="GitHub" width={36} height={36} />
+</div>
+
   </div>
 
   {/* 4 sections wrapper with justify-around */}
  
     {/* Company */}
+        <div className=" lg:w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 justify-center ">
     <div className="flex flex-col items-center text-center sm:items-center lg:items-start lg:text-left mb-2  ">
       <h4 className="font-normal mb-3 tracking-[0.1em] text-[clamp(1.1rem,1.3vw,1.5rem)]">
         COMPANY
       </h4>
-      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1.3vw,1.2rem)]">
+      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1vw,1.1em)] lg:text-[clamp(0.8rem,1vw,0.9rem)] xl:text-[clamp(1rem,1.2vw,1.3rem)] ">
         <li className="hover:text-black cursor-pointer font-normal">About</li>
         <li className="hover:text-black cursor-pointer font-normal">Features</li>
         <li className="hover:text-black cursor-pointer font-normal">Works</li>
@@ -158,7 +161,7 @@ export default function Footer() {
       <h4 className="font-normal mb-3 tracking-[0.1em] text-[clamp(1.1rem,1.3vw,1.5rem)]">
         HELP
       </h4>
-      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1.3vw,1.2rem)]">
+      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1vw,1.1em)] lg:text-[clamp(0.8rem,1vw,0.9rem)] xl:text-[clamp(1rem,1.2vw,1.3rem)] ">
         <li className="hover:text-black cursor-pointer font-normal">Customer Support</li>
         <li className="hover:text-black cursor-pointer font-normal">Delivery Details</li>
         <li className="hover:text-black cursor-pointer font-normal">Terms & Conditions</li>
@@ -171,7 +174,7 @@ export default function Footer() {
       <h4 className="font-normal mb-3 tracking-[0.1em] text-[clamp(1.1rem,1.3vw,1.5rem)]">
         FAQ
       </h4>
-      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1.3vw,1.2rem)]">
+      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1vw,1.1em)] lg:text-[clamp(0.8rem,1vw,0.9rem)] xl:text-[clamp(1rem,1.2vw,1.3rem)] ">
         <li className="hover:text-black cursor-pointer font-normal">Account</li>
         <li className="hover:text-black cursor-pointer font-normal">Manage Deliveries</li>
         <li className="hover:text-black cursor-pointer font-normal">Orders</li>
@@ -184,7 +187,7 @@ export default function Footer() {
       <h4 className="font-normal mb-3 tracking-[0.1em] text-[clamp(1.1rem,1.3vw,1.5rem)]">
         RESOURCES
       </h4>
-      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1.3vw,1.2rem)]">
+      <ul className="space-y-4 text-sm text-gray-600 text-[clamp(1rem,1vw,1.1em)] lg:text-[clamp(0.8rem,1vw,0.9rem)] xl:text-[clamp(1rem,1.2vw,1.3rem)] ">
         <li className="hover:text-black cursor-pointer font-normal">Free eBooks</li>
         <li className="hover:text-black cursor-pointer font-normal">Development Tutorial</li>
         <li className="hover:text-black cursor-pointer font-normal">How to - Blog</li>
@@ -193,7 +196,7 @@ export default function Footer() {
     </div>
   </div>
 </div>
-
+</div>
      
 
       {/* Bottom row */}
@@ -201,13 +204,16 @@ export default function Footer() {
         <p className="text-[clamp(0.75rem,1vw,0.9rem)] font-normal text-gray-500">
           Shopco © 2000–2023, All Rights Reserved
         </p>
-        <div className="flex gap-3">
-          <Image src="/visa.png" alt="Visa" width={40} height={25} />
-          <Image src="/badge.png" alt="PayPal" width={40} height={25} />
-          <Image src="/Paypal.png" alt="paypal" width={50} height={5} />
-          <Image src="/apple.png" alt="ApplePay" width={40} height={25} />
-          <Image src="/g.png" alt="gpay" width={50} height={10} />
-        </div>
+   <div className="flex gap-1">
+  <Image src="/visa.png" alt="Visa" width={90} height={50} />
+  <Image src="/badge.png" alt="PayPal" width={90} height={50} />
+  <Image src="/Paypal.png" alt="paypal" width={90} height={50} />
+  <Image src="/apple.png" alt="ApplePay" width={90} height={50} />
+  <Image src="/g.png" alt="gpay" width={90} height={50} />
+</div>
+
+
+
       </div>
     </footer>
   );

@@ -1,0 +1,15 @@
+/* font.css */
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/my-copy/public/fonts/IntegralCF/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/my-copy/public/fonts/IntegralCF/Fontspring-DEMO-integralcf-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
