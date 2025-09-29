@@ -22,6 +22,7 @@ export default function Casual() {
 const [selectedColors, setSelectedColors] = useState<string[]>([]);
 const [isSidebarOpen, setIsSidebarOpen] = useState(false);
  const [currentPage, setCurrentPage] = useState(1);
+ const activeColor = useSelector((state: RootState) => state.products.selectedColor);
 
  // Scroll to top when currentPage changes
 useEffect(() => {
@@ -58,9 +59,15 @@ useEffect(() => {
     }
   }, [searchQuery, dispatch]);
 
+// const handleColorClick = (color: string) => {
+//   setSelectedColors([color]); // still keep it in state as array if needed for UI
+//   dispatch(filterByColor(color)); // single string, not array
+// };
+
+
 const handleColorClick = (color: string) => {
-  setSelectedColors([color]); // still keep it in state as array if needed for UI
-  dispatch(filterByColor(color)); // single string, not array
+  dispatch(filterByColor(color));  // saves color in Redux
+  dispatch(applyAllFilters());     // apply all filters immediately
 };
 
   // ✅ Prevent body scroll when sidebar is open
@@ -97,7 +104,13 @@ const handleColorClick = (color: string) => {
     "black",
   ];
 
- // Pagination
+useEffect(() => {
+  dispatch(applyAllFilters());
+}, [selectedColor, selectedSize, price, currentPage, dispatch]);
+
+
+ 
+ // Pagination  
 const productsPerPage = 9;
 const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 const startIndex = (currentPage - 1) * productsPerPage;
@@ -114,6 +127,14 @@ const currentProducts = filteredProducts.slice(
 const [isPriceOpen, setIsPriceOpen] = useState(true);
 const [isColorOpen, setIsColorOpen] = useState(true);
 const [isSizeOpen, setIsSizeOpen] = useState(true);
+
+
+// Reset page when filters change
+useEffect(() => {
+  setCurrentPage(1); // reset page
+  dispatch(applyAllFilters()); // recalc filteredProducts
+}, [selectedColor, selectedSize, price, dispatch]);
+
  
 
   return (
@@ -121,8 +142,9 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
       {/* Sidebar Toggle (mobile) */}
 
 
-        <div className="p-4 text-sm text-gray-500">
-    Home &gt; <span className="text-black font-medium">{from}</span>
+        <div className="p-4 text-[clamp(0.75rem,2vw,0.9rem)] text-gray-500 font-satoshi font-light">
+          <Link href="/">
+    Home</Link> {'>'} <span className="text-black font-satoshi font-light">{from}</span>
   </div>
       <div className="flex flex-col md:flex-row gap-6 justify-between">
           {/* Breadcrumb inside sidebar */}
@@ -140,7 +162,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
           {/* Sidebar Content */}
           <div className="p-4 space-y-6">
             {/* Filters Header */}
-            <h3 className="font-bold text-lg mb-2 flex items-center justify-between">
+            <h3 className="font-satoshi font-light text-lg mb-2 flex items-center justify-between">
               Filters
               <button
                 className="hidden md:flex justify-end gap-2  text-white px-4 py-2 rounded-full mb-4"
@@ -174,7 +196,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
                 (item) => (
                   <li
                     key={item}
-                    className="flex justify-between items-center cursor-pointer hover:underline font-normal"
+                    className="flex justify-between items-center text-[clamp(0.75rem,2vw,0.9rem)] cursor-pointer hover:underline  font-satoshi font-light"
                      onClick={() => dispatch(filterByCategory(item))} // ✅ dispatch action
                   >
                     {item} <ChevronRight size={16} />
@@ -188,7 +210,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
             <div>
               {/* Header with toggle */}
               <button
-                className="flex justify-between w-full font-semibold mb-2"
+                className="flex justify-between w-full  mb-2 font-satoshi font-light"
                     onClick={() => setIsPriceOpen(!isPriceOpen)}
               >
                 Price
@@ -220,9 +242,9 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
   </Slider.Root>
 
   {/* Price labels above thumbs */}
-     <div className="absolute top-full left-0 w-full mt-1 pointer-events-none">
+     <div className="absolute top-full left-0 w-full mt-1 pointer-events-none font-Satoshi font-light">
     <span
-      className="absolute text-sm text-gray-600"
+      className="absolute text-[clamp(0.75rem,2vw,0.9rem)] text-gray-600"
       style={{
         left: `${((price[0] - 50) / 150) * 100}%`,
         transform: "translateX(-50%)",
@@ -250,7 +272,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
             <div className="w-auto">
               {/* Header with toggle */}
               <button
-                className="flex justify-between w-full font-semibold mb-2"
+                className="flex justify-between w-full  font-satoshi font-light  mb-2"
          onClick={() => setIsColorOpen(!isColorOpen)}
               >
                 Colors
@@ -286,7 +308,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
               <div>
                 <button
-                  className="flex justify-between items-center w-full font-semibold mb-3"
+                  className="flex justify-between items-center w-full font-satoshi font-light  mb-3"
                    onClick={() => {
     setIsSizeOpen(!isSizeOpen);             // ✅ toggle open/close
   
@@ -299,11 +321,11 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
                 {/* Sizes Grid */}
                 {isSizeOpen && (
-                  <div className="  xl:mr-12 ml-0 text-xs sm:text-md">
+                  <div className="  xl:mr-12 ml-0 text-[clamp(0.75rem,2vw,0.9rem)]">
                     {sizes.map((size) => (
                       <button
                         key={size}
-                        className={`inline-block rounded-full border px-2 xl:px-4 py-3 mb-2 mr-3 lg:mr-6 transition-colors font-normal
+                        className={`inline-block rounded-full border px-2 xl:px-4 py-3 mb-2 mr-3 lg:mr-6 transition-colors font-satoshi font-light
             ${selectedSize === size
                             ? "bg-black text-white border-black"
                             : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
@@ -333,14 +355,14 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
             {/* Dress Style */}
             <div>
-              <button className="flex justify-between w-full font-semibold mb-2 font-normal">
+              <button className="flex justify-between w-full font-satoshi font-light mb-2 ">
                 Dress Style <ChevronDown size={16} />
               </button>
-              <ul className="space-y-3 text-sm text-gray-700 font-normal">
+              <ul className="space-y-3 text-[clamp(0.75rem,2vw,0.9rem)] text-gray-700 font-normal">
                 {dressStyles.map((style) => (
                   <li
                     key={style}
-                    className="flex justify-between items-center cursor-pointer hover:underline"
+                    className="flex justify-between items-center font-satoshi font-light cursor-pointer hover:underline"
                   >
                     {style} <ChevronRight size={16} />
                   </li>
@@ -348,14 +370,7 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
               </ul>
             </div>
 
-            {/* Apply Button */}
-            {/* <button  onClick={() => {
-              setPrice([50, 200]);
-              dispatch(applyAllFilters());
-            }} className="w-full bg-black text-white py-2 rounded-full">
-              Apply Filter
-            </button> */}
-            {/* Apply Button */}
+           
 <button
   onClick={() => {
     // First, update Redux state with local selections
@@ -385,43 +400,29 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
 
         {/* Main */}
         <main className="w-full md:w-[70%] lg:w-[75%] flex flex-col gap-6">
-          <h2 className="text-2xl font-bold mb-6 flex justify-between items-center text-[clamp(1.25rem,2vw,2rem)]">
+    
+
+          <h2 className="text-2xl font-satoshi font-light mb-6 flex justify-between items-center text-[clamp(1.25rem,2vw,2rem)]">
             
             
             {from}
-            {/* <div className="flex items-center gap-4 text-[clamp(0.6rem,1.5vw,1rem)] text-gray-600 font-normal">
-              <span>
-                Showing 1–10 of 100 Products
-              </span>
-              <span className="flex items-center gap-1 hidden md:flex text-[clamp(0.35rem,1.5vw,0.8rem)]"">
-                Sort by:{" "}
-                <select 
-                     onChange={(e) => dispatch(sortByPrice(e.target.value as "low" | "high"))}
-                className="border rounded px-2 py-1 text-[clamp(0.35rem,1.5vw,0.8rem)]">
-
-  <option value="low">Price: Low to High</option>
-  <option value="high">Price: High to Low</option>
-                </select>
-              </span>
-            </div> */}
+            
             {currentProducts.length > 0 && (
-  <div className="flex items-center gap-4 text-[clamp(0.6rem,1.5vw,1rem)] text-gray-600 font-normal">
-    {/* <span>
-      Showing 1–10 of {filteredProducts.length} Products
-    </span> */}
-     <span>
+  <div className="flex items-center gap-4 text-[clamp(0.9rem,1.3vw,1.3rem)] md:text-[clamp(0.7rem,1.5vw,1rem)] text-gray-600 font-normal">
+   
+     <span className="font-satoshi font-light">
       Showing {((currentPage - 1) * productsPerPage) + 1}–
       {Math.min(currentPage * productsPerPage, filteredProducts.length)} 
       of  14  Products
     </span>
-    <span className="flex items-center gap-1 hidden md:flex">
+    <span className="flex items-center gap-1 font-satoshi font-light hidden md:flex">
       Sort by:{" "}
       <select 
         onChange={(e) => dispatch(sortByPrice(e.target.value as "low" | "high"))}
-        className="border rounded px-2 py-1 text-[clamp(0.6rem,1.5vw,1rem)]  "
+        className="border font-satoshi font-light rounded px-2 py-1 text-[clamp(0.7rem,1.5vw,1rem)] "
       >
-        <option value="low">Price: Low to High</option>
-        <option value="high">Price: High to Low</option>
+        <option className="font-satoshi font-light"  value="low ">Price: Low to High</option>
+        <option className="font-satoshi font-light"   value="high ">Price: High to Low</option>
       </select>
     </span>
   </div>
@@ -442,10 +443,22 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
             </button>
 
           </h2>
-
+  {currentProducts.length === 0 ?(
+  <div className="flex flex-col items-center justify-center text-center w-full" style={{ minHeight: '30vh' }}>
+    <p className="text-black text-lg ">
+      No products found
+    </p>
+    <Link
+      href="/casual"
+      className="px-6 py-2  text-white rounded-full hover:bg-gray-800 transition"
+    >
+      Back to Products
+    </Link>
+  </div>
+):(
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
-           {currentProducts.length > 0 ? (
-  currentProducts.map((product) => (
+         
+  {currentProducts.map((product) => (
     <div
       key={product.id}
       className="bg-white rounded-3xl transition"
@@ -460,23 +473,36 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
           />
         </Link>
       </div>
-      <h3 className="font-semibold text-sm truncate mt-2">
+      <h3 className="font-Satoshi font-extrabold  text-[clamp(0.75rem,2vw,1.125rem)] truncate mt-2">
         {product.name}
       </h3>
-      <div className="flex items-center gap-1 text-yellow-500 text-sm">
-        {"★".repeat(Math.round(product.rating))}
-        <span className="text-gray-500 text-xs">
+      <div className="flex items-center gap-1 text-yellow-500 ">
+        {/* {"★".repeat(Math.round(product.rating))}
+        <span className="text-gray-500">
           ({product.reviews})
-        </span>
+        </span> */}
+         {Array.from({ length: 5 }, (_, i) => (
+            <span
+              key={i}
+              className={`${
+                i < product.rating ? "text-yellow-400" : "text-gray-300"
+              } text-[clamp(1rem,2.5vw,2rem)]`}
+            >
+              ★
+            </span>
+          ))}
+            <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
+  <span className="font-sans">{product.rating}</span>/5
+</span>
       </div>
       <div className="flex items-center gap-2 mt-2">
-        <span className="font-bold text-lg">${product.price}</span>
+        <span className="font-Satoshi font-extraboldt text-[clamp(0.7rem,3vw,1.2rem)]">${product.price}</span>
         {product.oldPrice && (
           <>
-            <span className="line-through text-gray-400 text-sm">
+            <span className="line-through text-gray-400  font-satoshi font-light text-[clamp(0.7rem,3vw,1.2rem)]">
               ${product.oldPrice}
             </span>
-            <span className="text-red-500 text-sm font-medium">
+            <span className="bg-[#FF33331A] rounded-full px-2 text-red-500 text-[clamp(0.6rem,3vw,1rem)] font-satoshi font-light">
               {product.discount}
             </span>
           </>
@@ -484,20 +510,17 @@ const [isSizeOpen, setIsSizeOpen] = useState(true);
       </div>
     </div>
   ))
-) : (
-  <div className="w-full flex flex-col items-center justify-center gap-4 min-h-[60vh] md:min-h-[70vh]">
-    <p className="text-gray-500 text-lg font-semibold"> No products found</p>
-    <Link
-      href="/casual"
-      className="px-6 py-2 mt-4 text-whit  rounded-full hover:bg-gray-800 transition"
-    >
-      Back to Products
-    </Link>
-  </div>
-)}
+
+
+
+
+
+
+}
 
           </div>
-
+)
+}
           {/* <div className="border-b border-gray-300 pb-2 mb-4"></div> */}
 
          {currentProducts.length > 0 && (

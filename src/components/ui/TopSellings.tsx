@@ -451,7 +451,7 @@ export default function NewArrivals() {
   return (
     <section  id="on-sale" className="py-2 mb-10 ">
       <div className=" md:max-w-[clamp(360px,90%,1400px)] mx-auto px-4 text-center">
-        <h2 className="font-extrabold uppercase text-[clamp(1.6rem,2.6vw,6rem)] mb-8">
+        <h2 className="  uppercase text-[clamp(1.6rem,2.6vw,6rem)] mb-8 ">
         TOP SELLINGS  
         </h2>
 
@@ -494,7 +494,8 @@ export default function NewArrivals() {
   }}
   passHref
 >
-  <button className=" border border-gray-300 font-normal text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300  w-full  sm:w-[300px]  ">
+  <button className=" border border-gray-300 font-satoshi font-light text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 
+   w-full  sm:w-[230px]  ">
     View All
   </button>
 </Link>
@@ -525,11 +526,11 @@ function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-3 flex flex-col items-start text-left h-[7rem] sm:h-36">
-        <h3 className="text-[clamp(0.75rem,2vw,1.125rem)] w-full font-bold h-[1.3rem] sm:h-[2rem]">
+        <h3 className="text-[clamp(0.75rem,2vw,1.125rem)]  font-Satoshi font-extrabold   w-full  h-[1.3rem] sm:h-[2rem]">
           {product.name}
         </h3>
 
-        <div className="flex items-center gap-1 h-[1.5rem] sm:h-[1.75rem]">
+        <div className="flex items-center gap-1 h-[1.5rem] sm:h-[1.75rem] ">
           {Array.from({ length: 5 }, (_, i) => (
             <span
               key={i}
@@ -540,21 +541,22 @@ function ProductCard({ product }: { product: Product }) {
               ★
             </span>
           ))}
-          <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] text-gray-600">
-            {product.rating}/5
-          </span>
+        <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
+  <span className="font-sans">{product.rating}</span>/5
+</span>
+
         </div>
 
-        <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-semibold">
+        <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2  font-satoshi font-light">
           {product.oldPrice ? (
             <>
-              <span className="text-black text-[clamp(0.7rem,3vw,1.2rem)]">
+              <span className="text-black text-[clamp(0.7rem,3vw,1.2rem)] font-satoshi font-light">
                 ${product.price}
               </span>
-              <span className="line-through text-gray-400 text-[clamp(0.7rem,3vw,1.2rem)]">
+              <span className="line-through text-gray-400 text-[clamp(0.7rem,3vw,1.2rem)] font-satoshi font-light">
                 ${product.oldPrice}
               </span>
-              <span className="bg-red-100 text-red-500 font-medium px-2 py-0.5 rounded-full text-[clamp(0.4rem,2vw,0.7rem)]">
+              <span className="bg-red-100 text-red-500 font-satoshi font-light px-2 py-0.5 rounded-full text-[clamp(0.4rem,2vw,0.7rem)] font-satoshi font-light">
                 {Math.round(
                   ((Number(product.oldPrice) - Number(product.price)) /
                     Number(product.oldPrice)) *
@@ -564,7 +566,7 @@ function ProductCard({ product }: { product: Product }) {
               </span>
             </>
           ) : (
-            <span className="text-black text-[clamp(0.7rem,3vw,1.2rem)]">
+            <span className="text-black  font-satoshi font-light   text-[clamp(0.7rem,3vw,1.2rem)]">
               ${product.price}
             </span>
           )}

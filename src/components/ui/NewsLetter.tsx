@@ -11,7 +11,7 @@ export default function Newsletter() {
 <section className="min-w-[clamp(220px,95%,1300px)] absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 
  bg-black py-6 px-6  rounded-xl z-50 border border-green-600">
 
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-2">
     {/* Left text */}
     <h2 className="font-extrabold text-[clamp(1.5rem,3.5vw,2.5rem)] text-white text-center md:text-left">
       STAY UP TO DATE ABOUT <br className="hidden sm:block" /> OUR LATEST OFFERS
@@ -24,13 +24,13 @@ export default function Newsletter() {
         <input
           type="email"
           placeholder="Enter your email address"
-          className="w-full text-[clamp(0.875rem,2vw,1rem)] font-medium black outline-none bg-transparent"
+          className="w-full text-[clamp(0.875rem,2vw,1rem)] font-satoshi font-light black outline-none bg-transparent"
           required
         />
       </div>
       <button
         type="submit"
-        className="bg-white text-black text-[clamp(0.875rem,2vw,1rem)] font-medium px-6 sm:px-8 py-2.5 rounded-full hover:bg-gray-200 transition w-full sm:w-96"
+        className="bg-white text-black text-[clamp(0.875rem,2vw,1rem)] font-satoshi font-light px-6 sm:px-8 py-2.5 rounded-full hover:bg-gray-200 transition w-full sm:w-96"
       >
         Subscribe to Newsletter
       </button>

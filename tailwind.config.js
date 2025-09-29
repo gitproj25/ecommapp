@@ -25,11 +25,8 @@ module.exports = {
         lightGray: '#F0F0F0',
           semiBlack: '#00000099',
       },
-
-      // ✅ Custom fonts
-      fontFamily: {
-       integral: ['var(--font-integral)', 'sans-serif'],
-  satoshi: ['var(--font-satoshi)', 'sans-serif'], // for bold text
+fontFamily: {
+        Satoshi: ["Satoshi", "sans-serif"], // custom font family
       },
 
 
@@ -37,10 +34,14 @@ module.exports = {
 
       // ✅ Keyframes
       keyframes: {
+        // "infinite-scroll": {
+        //   from: { transform: "translateX(0)" },
+        //   to: { transform: "translateX(-50%)" },
+        // },
         "infinite-scroll": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
-        },
+        from: { transform: "translateX(0)" },
+        to: { transform: "translateX(-50%)" }, // move half width
+      },
         "infinite-scroll-reverse": {
           from: { transform: "translateX(-50%)" },
           to: { transform: "translateX(0)" },

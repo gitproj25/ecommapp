@@ -57,7 +57,7 @@ export default function NewArrivals({ prod }: YouMightProps) {
 
 <div className="p-3 flex flex-col items-start text-left h-[7rem] sm:h-36">
   {/* Product name */}
-  <h3 className="text-[clamp(0.75rem,2vw,1.125rem)] w-full  font-bold  h-[1.3rem] sm:h-[2rem]">
+  <h3 className="text-[clamp(0.75rem,2vw,1.125rem)] w-full font-satoshi font-light h-[1.3rem] sm:h-[2rem]">
     {product.name}
   </h3>
 
@@ -74,13 +74,13 @@ export default function NewArrivals({ prod }: YouMightProps) {
 </span>
 
     ))}
-    <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] text-gray-600">
+    <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi font-light  text-gray-600">
       {product.rating}/5
     </span>
   </div>
 
   {/* Price (always bottom) */}
-  <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-semibold">
+  <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-satoshi font-light">
   {product.oldPrice ? (
     <>
       {/* Discounted price */}
@@ -89,7 +89,7 @@ export default function NewArrivals({ prod }: YouMightProps) {
       </span>
 
       {/* Original price */}
-      <span className="line-through text-gray-400 text-[clamp(1rem,3vw,1.5rem)]">
+      <span className="line-through text-gray-400 text-[clamp(1rem,3vw,1.5rem)] font-satoshi font-light">
         ${product.oldPrice}
       </span>
 

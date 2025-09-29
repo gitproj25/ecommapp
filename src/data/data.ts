@@ -155,7 +155,7 @@ export const products: Product[] = [
     reviews: 1355,
     image: "/products/p1.png",
     thumbnails: ["/products/p1.png", "/products/p1.png","/products/p1.png"],
-    color: ["green", "white"],
+    color: ["green"],
     size: ["Small", "Medium", "Large"],
     description: "Trendy gradient graphic T-shirt designed for everyday style and comfort."
   },

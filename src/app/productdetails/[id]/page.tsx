@@ -9,7 +9,10 @@ import { useParams } from "next/navigation";
 import { products } from "../../../data/data";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/redux/store/store"; // your root reducer
-import { addToCart, decreaseQuantity, removeFromCart } from "../../../redux/store/cartslice";
+
+
+
+import { removeFromCart,increaseQuantity, decreaseQuantity, addToCart,clearCart } from "../../../redux/store/cartslice";
 import { useRouter } from "next/navigation"; // for App Router
 import Link from "next/link";
 import { toast } from "react-toastify";
@@ -38,9 +41,9 @@ export default function ProductDetails() {
     item.selectedColor === selectedColor &&
     item.selectedSize === selectedSize
 );
-// final quantity (cart already has some? add it to new quantity)
-const finalQuantity = (cartItem?.quantity || 0) + quantity;
-console.log("🛒 Cart Items:", cartItems);
+
+console.log(cartItem)
+
 
 // Get recommended products (same category, max 4 products)
 const recommendedProducts = products
@@ -55,14 +58,14 @@ const recommendedProducts = products
 <div className="w-full md:w-1/2 mb-4">
   <nav className="text-gray-500 text-sm flex gap-2">
      <Link href="/">
-    <span className="cursor-pointer hover:underline">Home</span>
+    <span className="cursor-pointer hover:underline font-satoshi font-light">Home</span>
     </Link>
-    <span>/</span>
+    <span>{'>'}</span>
     <Link href="/casual">
-    <span className="cursor-pointer hover:underline">Products</span>
+    <span className="cursor-pointer hover:underline font-satoshi font-light">Products</span>
     </Link>
-    <span>/</span>
-    <span className="text-black font-medium">{product.name}</span>
+    <span>{'>'}</span>
+    <span className="text-black font-satoshi font-light">{product.name}</span>
   </nav>
 </div>
         <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[clamp(20rem,33vw,40rem)]">
@@ -122,7 +125,7 @@ const recommendedProducts = products
             {/* Rating */}
             <div className="flex items-center gap-2">
               <div className="text-yellow-500 lg:text-[clamp(1rem,2vw,12rem)]">★★★★★</div>
-              <div className="text-gray-500 text-[clamp(0.75rem,2vw,1rem)]">
+              <div className="text-gray-500 font-satoshi font-light text-[clamp(0.75rem,2vw,1rem)]">
                 {product.rating}
               </div>
             </div>
@@ -130,26 +133,27 @@ const recommendedProducts = products
             {/* Price */}
     <div className="flex items-center gap-3">
   {/* Discounted Price */}
-  <span className="text-[clamp(0.75rem,2vw,1rem)] lg:text-[clamp(0.5rem,3vw,1.5rem)] font-semibold">
+  <span className="text-[clamp(0.75rem,2vw,1rem)] font-satoshi font-light  lg:text-[clamp(0.5rem,3vw,1.5rem)] ">
     ${product.price} {/* discounted price */}
   </span>
 
   {/* Old Price */}
   {product.oldPrice && (
-    <span className="line-through text-gray-400 text-[clamp(0.75rem,2vw,1rem)] lg:text-[clamp(0.5rem,3vw,1.5rem)]">
+    <span className="line-through font-satoshi font-light  text-gray-400 text-[clamp(0.75rem,2vw,1rem)] lg:text-[clamp(0.5rem,3vw,1.5rem)]">
       ${product.oldPrice} {/* original price */}
     </span>
   )}
 
   {/* Discount Percentage */}
   {product.oldPrice && (
-    <span className="bg-[#FF33331A] text-red-400 font-normal text-[clamp(0.75rem,1.5vw,1rem)] lg:text-[clamp(0.5rem,3vw,1rem)] px-2 py-1 rounded-full">
+    <span className="bg-[#FF33331A] font-satoshi font-light  text-red-400  text-[clamp(0.75rem,1.5vw,1rem)] lg:text-[clamp(0.5rem,3vw,1rem)] px-2 py-1 
+    rounded-full">
       -{Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
     </span>
   )}
 </div>
  {/* Description */}
-        <p className="text-semiBlack font-Satoshi text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)]">
+        <p className="text-semiBlack font-satoshi font-light text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)]">
   {product.description}
 </p>
 
@@ -160,7 +164,7 @@ const recommendedProducts = products
 
             {/* Colors */}
                 <div>
-              <h3 className="text-semiBlack font-normal text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)] mb-2">Select Colors</h3>
+              <h3 className="text-semiBlack  text-[clamp(0.8rem,1vw,1rem)] font-satoshi font-light lg:text-[clamp(0.8rem,1.8vw,1rem)] mb-2">Select Colors</h3>
               <div className="flex gap-3">
                 {product.color?.map((color, i) => (
                   <button
@@ -181,13 +185,13 @@ const recommendedProducts = products
 
             {/* Sizes */}
             <div>
-              <h3 className="font-normal text-semiBlack text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)]  mb-1 lg:mb-2">Choose Size</h3>
+              <h3 className=" text-semiBlack text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)] font-satoshi font-light  mb-1 lg:mb-2">Choose Size</h3>
               <div className="flex gap-3 flex-wrap">
                 {product.size?.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`xl:px-5 xl:py-3  py-1 px-3 text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)] rounded-full border  font-normal ${
+                    className={`xl:px-5 xl:py-3  py-1 px-3 text-[clamp(0.8rem,1vw,1rem)] font-satoshi font-light lg:text-[clamp(0.8rem,1.8vw,1rem)] rounded-full border ${
                       selectedSize === size
                         ? "bg-black text-white border-black"
                         : "bg-gray-100 text-gray-600 border-gray-300"
@@ -202,39 +206,88 @@ const recommendedProducts = products
 
             {/* Quantity + Cart */}
             <div className="flex items-start justify-start  gap-2  ">
-              <div className="flex items-center bg-gray-100 rounded-full py-2 px-7 lg:px-12 lg:py-2">
-                <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>
-                  <Minus className="w-4 h-4 xl:w-5 xl:h-5" />
-                </button>
-                <span className="px-3 text-sm sm:text-base md:text-lg">{quantity}</span>
-                <button onClick={() => setQuantity((q) => q + 1)}>
-                  <Plus className="w-4 h-4 xl:w-5 xl:h-5" />
-                </button>
-              </div>
+       <div className="flex items-center bg-gray-100 rounded-full py-2 px-7 lg:px-12 lg:py-2">
+    
+    {/* Decrease quantity */}
+    <button
+      onClick={() => {
+        if (cartItem) {
+          dispatch(
+            decreaseQuantity({
+              id: product.id,
+              selectedColor,
+              selectedSize,
+            })
+          );
+        }
+      }}
+    >
+      <Minus className="w-4 h-4 xl:w-5 xl:h-5" />
+    </button>
 
-   <button
+    {/* Show quantity (default 1 if not in cart) */}
+    <span className="px-3 text-sm font-Satoshi symbol sm:text-base md:text-lg">
+      {cartItem?.quantity || 1}
+    </span>
+
+    {/* Increase quantity */}
+    <button
+      onClick={() => {
+        if (cartItem) {
+          // If already in cart → increase quantity
+          dispatch(
+            increaseQuantity({
+              id: product.id,
+              selectedColor,
+              selectedSize,
+            })
+          );
+        } else {
+          // If not in cart → add first with quantity 1
+          dispatch(
+            addToCart({
+              ...product,
+              selectedColor,
+              selectedSize,
+              quantity: 1,
+              discount: "20",
+              price: product.price,
+              discountPrice: product.price - (product.price * 20) / 100,
+            })
+          );
+        }
+      }}
+    >
+      <Plus className="w-4 h-4 xl:w-5 xl:h-5" />
+    </button>
+  </div>
+
+  {/* Add to Cart button */}
+ <button
   onClick={() => {
-    // Add product to cart
-dispatch(
-  addToCart({
-    ...product,
-    selectedColor,
-    selectedSize,
-    quantity,
-   discount: "20" ,// number
-    price: product.price,
-    discountPrice: product.price - (product.price * 20) / 100
-  })
-);
- // toast.success("Item added to cart! 🎉");  // success toast
+    if (!cartItem) {
+      // Only add if NOT in cart
+      dispatch(
+        addToCart({
+          ...product,
+          selectedColor,
+          selectedSize,
+          quantity: 1,
+          discount: "20",
+          price: product.price,
+          discountPrice: product.price - (product.price * 20) / 100,
+        })
+      );
+    }
 
-    // Navigate to cart page  sm:w-[clamp(160px,50%,350px)]
+    // Navigate to cart page
     router.push("/cart");
   }}
-  className="w-[clamp(140px,60%,300px)] text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)] lg:w-full  bg-black text-white  py-2 xl:py-2 rounded-full font-semibold "
+  className="w-[clamp(140px,60%,300px)] text-[clamp(0.8rem,1vw,1rem)] font-satoshi font-light lg:text-[clamp(0.8rem,1.8vw,1rem)] lg:w-full bg-black text-white py-2 xl:py-2 rounded-full"
 >
   Add to Cart
 </button>
+
 
 
             </div>

@@ -224,8 +224,7 @@ export default function Header() {
       setQuery(""); // optional: clear input
     }
   };
-
-  return (
+ return (
     <header className="w-full border-b border-gray-200 py-1">
       <div className="max-w-[clamp(360px,92%,2140px)] mx-auto flex items-center justify-between px-2 py-3 lg:py-4">
         {/* Left side (Logo + Mobile Menu button) */}
@@ -240,44 +239,42 @@ export default function Header() {
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
-          <Link
-            href="/"
-            className="font-extrabold text-[clamp(1.5rem,4vw,2.5rem)]"
-          >
-            SHOP.CO
-          </Link>
+         <Link href="/" className=" font-extrabold font-Integral CF  text-[32px] leading-[100%] tracking-[0%] align-middle">
+  SHOP.CO
+</Link>
+
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex space-x-6 text-gray-700 font-normal relative px-2">
+        <nav className="hidden lg:flex space-x-6 text-gray-700 font-normal relative px-6">
           <div className="relative">
             <button
               className="flex items-center space-x-1 cursor-pointer"
               onClick={() => setIsShopOpen(!isShopOpen)}
             >
-              <span>Shop</span>
+              <span className="text-[clamp(0.875rem,1.6vw,1.3rem)] font-satoshi font-light">Shop</span>
               <ChevronDown className="h-4 w-4" />
             </button>
-
+     
            {isShopOpen && (
   <div className="absolute top-full left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded z-20">
     <Link
       href="#"
-      className="block px-4 py-2 font-normal hover:bg-gray-100"
+      className="block px-4 py-2 font-satoshi font-light hover:bg-gray-100"
       onClick={() => setIsShopOpen(false)} // ✅ close dropdown
     >
       Men
     </Link>
     <Link
       href="#"
-      className="block px-4 py-2 font-normal hover:bg-gray-100"
+      className="block px-4 py-2 font-satoshi font-light hover:bg-gray-100"
       onClick={() => setIsShopOpen(false)}
     >
       Women
     </Link>
     <Link
       href="#"
-      className="block px-4 py-2 font-normal hover:bg-gray-100"
+      className="block px-4 py-2 font-satoshi font-light hover:bg-gray-100"
       onClick={() => setIsShopOpen(false)}
     >
       Kids
@@ -286,21 +283,22 @@ export default function Header() {
 )}
 
           </div>
+<Link href="/#on-sale" className="text-[clamp(0.75rem,1.2vw,1.125rem)] font-satoshi font-light ">On Sale</Link>
+<Link href="/#new-arrivals" className="text-[clamp(0.75rem,1.2vw,1.125rem)] font-satoshi font-light ">New Arrivals</Link>
+<Link href="/#brands" className="text-[clamp(0.75rem,1.2vw,1.125rem)] font-satoshi font-light"  >Brands</Link>
 
-          <Link href="/#on-sale">On Sale</Link>
-          <Link href="/#new-arrivals">New Arrivals</Link>
-          <Link href="/#brands">Brands</Link>
         </nav>
 
         {/* Search Bar (Desktop Only) */}
-        <div className="hidden lg:flex flex-1 max-w-md mx-6 relative">
+        <div className="hidden lg:flex flex-1 max-w-md lg:max-w-lg xl:max-w-2xl 2xl:max-w-4xl  mx-6 relative">
           <div className="flex items-center w-full bg-gray-100 rounded-full px-3 py-2">
             <Search className="h-5 w-5 text-gray-500 mr-2" />
             <input
               type="text"
               value={query}
               placeholder="Search for products..."
-              className="bg-transparent outline-none w-full font-normal"
+              className="bg-transparent outline-none w-full font-Satoshi font-light text-[clamp(0.75rem,1.2vw,1.125rem)]
+"
               onChange={handleChange}
               onKeyDown={handleKeyDown}
             />
@@ -308,7 +306,7 @@ export default function Header() {
 
           {/* 🔽 Search Preview Dropdown */}
          
-     {query.trim() !== "" && filteredProducts.length > 0 && (
+     {/* {query.trim() !== "" && filteredProducts.length > 0 && (
   <div className="absolute top-full left-0 mt-2 w-full bg-white border rounded-lg shadow-lg z-50">
     {filteredProducts.slice(0, 5).map((item) => (
       // <button
@@ -334,7 +332,30 @@ export default function Header() {
 </button>
     ))}
   </div>
+)} */}
+
+{query.trim() !== "" && filteredProducts.length > 0 && (
+  <div className="absolute top-full left-0 mt-2 w-full bg-white border rounded-lg shadow-lg z-50">
+    {filteredProducts.slice(0, 5).map((item) => (
+      <button
+        key={item.id}
+        onClick={() => {
+          setQuery(""); // clear input
+          router.push(`/casual?search=${encodeURIComponent(item.name)}`);
+        }}
+        className="flex items-center  font-Satoshi font-light w-full text-left px-4 py-2 hover:bg-gray-100 text-sm gap-2"
+      >
+        <img
+          src={item.image} 
+          alt={item.name}
+          className="w-8 h-8 object-cover rounded"
+        />
+        <span>{item.name}</span>
+      </button>
+    ))}
+  </div>
 )}
+
 
 
         </div>
@@ -353,23 +374,24 @@ export default function Header() {
           <Link href="/cart">
             <ShoppingCart className="h-6 w-6 cursor-pointer" />
           </Link>
-          <User className="h-6 w-6 cursor-pointer" />
+          {/* <User className="h-6 w-6 cursor-pointer" /> */}
+          <img src="/u.png" className=" cursor-pointer"/>
         </div>
       </div>
 
       {/* Mobile Nav */}
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 px-4 py-3 space-y-3">
-          <Link href="#" className="block">
+          <Link href="#" className="block font-satoshi font-light">
             Shop
           </Link>
-          <Link href="#" className="block">
+          <Link href="#" className="block font-satoshi font-light">
             On Sale
           </Link>
-          <Link href="#" className="block">
+          <Link href="#" className="block font-satoshi font-light">
             New Arrivals
           </Link>
-          <Link href="#" className="block">
+          <Link href="#" className="block font-satoshi font-light">
             Brands
           </Link>
         </div>
@@ -383,7 +405,7 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search for products..."
-              className="bg-transparent outline-none w-full"
+              className="bg-transparent outline-none w-full font-Satoshi font-light"
               autoFocus
               value={query}
               onChange={handleChange}

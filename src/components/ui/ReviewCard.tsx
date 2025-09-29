@@ -97,9 +97,9 @@ const ReviewCard = () => {
         <section className="w-full max-w-[clamp(360px,92%,2140px)] mx-auto px-4 py-5 pb-5 mb-3 ">
 
   <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
-<h2 className="text-2xl font-bold text-[clamp(1rem,1.5vw,2rem)] flex-1 min-w-0 whitespace-nowrap overflow-hidden">
+<h2 className="text-2xl  text-[clamp(1rem,1.5vw,2rem)] font-satoshi font-light flex-1 min-w-0 whitespace-nowrap overflow-hidden">
   All Reviews{' '}
-  <span className="font-normal text-[clamp(0.7rem,1vw,1.2rem)] text-gray-500">
+  <span className="font-satoshi font-light text-[clamp(0.7rem,1vw,1.2rem)] text-gray-500">
     (24)
   </span>  
 </h2>
@@ -118,13 +118,13 @@ const ReviewCard = () => {
     </button>
 
     {/* Latest Button - hide on small screens */}
-    <button className="hidden sm:flex items-center gap-2 bg-lightGray px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base text-gray-700 hover:bg-gray-200 transition">
+    <button className="hidden sm:flex items-center font-satoshi font-light gap-2 bg-lightGray px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base text-gray-700 hover:bg-gray-200 transition">
       Latest
       <ChevronDown size={16} />
     </button>
 
     {/* Write Review Button */}
-    <button className="flex items-center font-normal gap-2 bg-black text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-base hover:bg-gray-800 transition">
+    <button className="flex items-center font-satoshi font-light gap-2 bg-black text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-base hover:bg-gray-800 transition">
       Write Review
     </button>
   </div>
@@ -171,7 +171,7 @@ const ReviewCard = () => {
 
   {/* Name + Check */}
   <div className="flex items-start gap-2">
-    <h3 className="font-Satoshi text-[clamp(0.9rem,2vw,1rem)]">{review.name}</h3>
+    <h3 className=" text-[clamp(0.9rem,2vw,1rem)] font-satoshi font-light">{review.name}</h3>
       {/* <CheckCircle size={18} className="text-green-500" /> */}
       <Image
       src="/right.png"
@@ -183,8 +183,7 @@ const ReviewCard = () => {
   </div>
 
   {/* Comment */}
-  <p className="text-semiBlack text-[clamp(0.8rem,1vw,1rem)] font-
-Satoshi  text-gray-300">"{review.comment}"</p>
+  <p className="text-semiBlack text-[clamp(0.8rem,1vw,1rem)]   text-gray-300 font-satoshi font-light">"{review.comment}"</p>
 
   {/* Date */}
   <p className="font-Satoshi text-gray-400 text-[clamp(0.9rem,2vw,1rem)] text-semiBlack">Posted on {review.date}</p>
@@ -200,7 +199,7 @@ Satoshi  text-gray-300">"{review.comment}"</p>
       <div className="flex justify-center py-5">
         <button
           onClick={handleToggle}
-          className="border border-gray-300 font-normal text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 sm:w-48 whitespace-nowrap"
+          className="border border-gray-300 font-satoshi font-light text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 sm:w-48 whitespace-nowrap"
         >
           {visibleCount === allReviews.length ? "Read Less" : "Load More Reviews"}
         </button>

@@ -1,15 +1,196 @@
-/* font.css */
+/* IntegralCF – only letters & numbers (A–Z, a–z, 0–9) */
 @font-face {
   font-family: 'IntegralCF';
-  src: url('/my-copy/public/fonts/IntegralCF/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+/* Italic / Oblique versions */
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-regularoblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-mediumoblique.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-demibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-demiboldoblique.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-boldoblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-extraboldoblique.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('/fonts/IntegralCF/Fontspring-DEMO-integralcf-heavyoblique.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+/* Satoshi – normal fallback font */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'IntegralCF';
-  src: url('/my-copy/public/fonts/IntegralCF/Fontspring-DEMO-integralcf-extrabold.otf') format('opentype');
-  font-weight: 800;
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-Black.otf') format('opentype');
+  font-weight: 900;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi/Satoshi-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
 
+/* Apply globally */
+body, p, span, h1, h2, h3, h4, h5, h6 {
+  font-family: 'IntegralCF', 'Satoshi', Arial, sans-serif;
+}

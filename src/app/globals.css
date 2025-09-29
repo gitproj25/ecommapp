@@ -3,24 +3,30 @@
 @tailwind utilities;
 @layer base {
   html {
-    scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    scroll-behavior: smooth; 
+     font-family: 'IntegralCF', 'Satoshi', sans-serif;
     font-size: 100%;
   }
   body {
-    font-family: 'IntegralCF';
+     font-family: 'IntegralCF', 'Satoshi', Arial, Helvetica, sans-serif;
+   
+
+    font-weight: 400;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  /* Apply globally */
+  body, p, span, h1, h2, h3, h4, h5, h6 {
+  font-family: 'IntegralCF', Arial, sans-serif;
+}
   /* Heading Styles */
   h1,
   h2,
   h3,
   h4,
-  h5,
+  h5, 
   h6 {
     @apply font-semibold text-gray-900;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
