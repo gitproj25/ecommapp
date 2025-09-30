@@ -430,7 +430,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F0F0F0]  absolute w-full mx-auto  py-12 px-4 border-t border-gray-200 z-0 pt-40">
+    <footer className="bg-[#F0F0F0]  absolute w-full mx-auto  py-6 px-4 border-t border-gray-200 z-0 pt-40">
       <div className="max-w-[clamp(360px,92%,2140px)] mx-auto ">
         {/* Top section */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 text-center sm:text-left ">
@@ -516,37 +516,38 @@ export default function Footer() {
         </div>
 
         {/* Bottom line */}
-        <div className="border-t border-gray-300 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-300 mt-10 pt-2 flex flex-col md:flex-row justify-between items-center gap-4 ">
           <p className="text-gray-500 text-sm font-satoshi font-light text-center">
             Shop.co © 2000-2023, All Rights Reserved
           </p>
 
           {/* Payment icons */}
           <div className="flex flex-wrap gap-2 sm:gap-4 justify-center items-center">
+ 
   <img
     src="/visa.png"
     alt="Visa"
-    className="w-14 h-auto sm:w-24 md:w-24 lg:w-24 object-contain"
+    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/badge.png"
-    alt="PayPal"
-    className="w-14 h-auto sm:w-24 md:w-24 lg:w-24 object-contain"
+    alt="Badge"
+    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/Paypal.png"
     alt="PayPal"
-    className="w-14 h-auto sm:w-24  md:w-24 lg:w-24 object-contain"
+    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/apple.png"
     alt="ApplePay"
-    className="w-14 h-auto sm:w-24 md:w-24 lg:w-24 object-contain"
+    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/g.png"
     alt="GPay"
-    className="w-14 h-auto sm:w-24 md:w-24 lg:w-24 object-contain"
+    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
 </div>
 
