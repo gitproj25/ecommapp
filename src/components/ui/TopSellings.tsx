@@ -547,7 +547,7 @@ function ProductCard({ product }: { product: Product }) {
 
         </div>
 
-        <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2  font-satoshi font-light">
+        <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-Satoshi font-extrabold">
           {product.oldPrice ? (
             <>
               <span className="text-black text-[clamp(0.7rem,3vw,1.2rem)] font-satoshi font-light">

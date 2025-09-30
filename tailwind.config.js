@@ -34,14 +34,15 @@ fontFamily: {
 
       // ✅ Keyframes
       keyframes: {
-        // "infinite-scroll": {
-        //   from: { transform: "translateX(0)" },
-        //   to: { transform: "translateX(-50%)" },
-        // },
-        "infinite-scroll": {
-        from: { transform: "translateX(0)" },
-        to: { transform: "translateX(-50%)" }, // move half width
-      },
+      
+      //   "infinite-scroll": {
+      //   from: { transform: "translateX(0)" },
+      //   to: { transform: "translateX(-100%)" }, // move half width
+      // },
+      "infinite-scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }, // move half of content width
+        },
         "infinite-scroll-reverse": {
           from: { transform: "translateX(-50%)" },
           to: { transform: "translateX(0)" },
@@ -52,9 +53,10 @@ fontFamily: {
         // },
       },
 
+
       // ✅ Animations
       animation: {
-        "infinite-scroll": "infinite-scroll 50s linear infinite",
+        "infinite-scroll": "infinite-scroll 60s linear infinite",
         "infinite-scroll-reverse": "infinite-scroll-reverse 50s linear infinite ",
         
         marquee: "marquee 20s linear infinite",

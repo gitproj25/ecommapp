@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="flex flex-col justify-center">
           {/* Text + Button */}
           <div className="space-y-4 text-start lg:text-left pt-6">
-            <p className="text-[clamp(2rem,4vw,3.8rem)] font-IntegralCF font-light  text-[#000000]  ">
+            <p className="text-[clamp(2rem,4vw,3.8rem)] font-IntegralCF  font-light  leading-[1.1] text-[#000000]  ">
               FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
             </p>
             <p className="text-[#00000099]  mx-auto lg:mx-0  font-satoshi font-light">

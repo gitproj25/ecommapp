@@ -34,7 +34,7 @@ const total = subtotal - totalDiscount + deliveryFee;
  // If cart is empty, show a message
   if (cartItems.length === 0) {
     return (
-      <div className="sm:max-w-[clamp(360px,92%,2140px)] mb-10 mx-auto flex justify-center items-center  min-h-[400px] rounded-xl p-6">
+      <div className="sm:max-w-[clamp(360px,92%,2140px)] mb-16 mx-auto flex justify-center items-center  min-h-[400px] rounded-xl p-6">
         <p className="text-center text-black text-lg">
           🛒 Your cart is empty
         </p>
