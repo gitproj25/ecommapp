@@ -221,7 +221,7 @@ export default function ReviewCarousel() {
         </div>
 
         {/* Edge gradients */}
-        <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+        <div className="absolute  left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none" />
       </div>
     </section>
