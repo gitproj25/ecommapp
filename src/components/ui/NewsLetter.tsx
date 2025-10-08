@@ -13,8 +13,8 @@ export default function Newsletter() {
 
   <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-2">
     {/* Left text */}
-    <h2 className="font-extrabold text-[clamp(1.5rem,3.5vw,2.5rem)] text-white text-center md:text-left">
-      STAY UP TO DATE ABOUT <br className="hidden sm:block" /> OUR LATEST OFFERS
+    <h2 className=" font-integral font-extrabold text-[clamp(1.9rem,3.5vw,2.5rem)] text-white text-center md:text-left">
+      STAY UP TO DATE ABOUT  OUR <br className="hidden sm:block" />  LATEST OFFERS
     </h2>
 
     {/* Right form */}
@@ -24,13 +24,13 @@ export default function Newsletter() {
         <input
           type="email"
           placeholder="Enter your email address"
-          className="w-full text-[clamp(0.875rem,2vw,1rem)] font-satoshi font-light black outline-none bg-transparent"
+          className="w-full text-[clamp(1.1rem,1.5vw,1rem)]  font-satoshi font-light black outline-none bg-transparent"
           required
         />
       </div>
       <button
         type="submit"
-        className="bg-white text-black text-[clamp(0.875rem,2vw,1rem)] font-satoshi font-light px-6 sm:px-8 py-2.5 rounded-full hover:bg-gray-200 transition w-full sm:w-96"
+        className="bg-white text-black text-[clamp(1.1rem,1.5vw,1rem)]  font-satoshi font-light px-6 sm:px-8 py-2.5 rounded-full hover:bg-gray-200 transition w-full sm:w-96"
       >
         Subscribe to Newsletter
       </button>

@@ -58,14 +58,14 @@ const recommendedProducts = products
 <div className="w-full md:w-1/2 mb-4">
   <nav className="text-gray-500 text-sm flex gap-2">
      <Link href="/">
-    <span className="cursor-pointer hover:underline font-satoshi font-light">Home</span>
+    <span className="cursor-pointer text-[clamp(0.75rem,2vw,0.999rem)] hover:underline font-Satoshi font-light">Home</span>
     </Link>
     <span>{'>'}</span>
     <Link href="/casual">
-    <span className="cursor-pointer hover:underline font-satoshi font-light">Products</span>
+    <span className="cursor-pointer text-[clamp(0.75rem,2vw,0.999rem)] hover:underline font-Satoshi font-light">Products</span>
     </Link>
     <span>{'>'}</span>
-    <span className="text-black font-satoshi font-light">{product.name}</span>
+    <span className="text-black text-[clamp(0.75rem,2vw,0.99rem)] font-Satoshi font-light">{product.name}</span>
   </nav>
 </div>
         <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[clamp(20rem,33vw,40rem)]">
@@ -133,27 +133,27 @@ const recommendedProducts = products
             {/* Price */}
     <div className="flex items-center gap-3">
   {/* Discounted Price */}
-  <span className="text-[clamp(0.75rem,2vw,1rem)] font-satoshi font-light  lg:text-[clamp(0.5rem,3vw,1.5rem)] ">
+  <span className="text-[clamp(0.75rem,2vw,1rem)] font-Satoshi font-bold  lg:text-[clamp(0.5rem,3vw,1.5rem)] ">
     ${product.price} {/* discounted price */}
   </span>
 
   {/* Old Price */}
   {product.oldPrice && (
-    <span className="line-through font-satoshi font-light  text-gray-400 text-[clamp(0.75rem,2vw,1rem)] lg:text-[clamp(0.5rem,3vw,1.5rem)]">
+    <span className="line-through font-Satoshi font-bold  text-gray-400 text-[clamp(0.75rem,2vw,1rem)] lg:text-[clamp(0.5rem,3vw,1.5rem)]">
       ${product.oldPrice} {/* original price */}
     </span>
   )}
 
   {/* Discount Percentage */}
   {product.oldPrice && (
-    <span className="bg-[#FF33331A] font-satoshi font-light  text-red-400  text-[clamp(0.75rem,1.5vw,1rem)] lg:text-[clamp(0.5rem,3vw,1rem)] px-2 py-1 
+    <span className="bg-[#FF33331A] font-Satoshi font-bold  text-red-400  text-[clamp(0.75rem,1.5vw,1rem)] lg:text-[clamp(0.5rem,3vw,1rem)] px-2 py-1 
     rounded-full">
       -{Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
     </span>
   )}
 </div>
  {/* Description */}
-        <p className="text-semiBlack font-satoshi font-light text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)]">
+        <p className="text-semiBlack font-Satoshi font-light text-[clamp(0.9rem,2vw,1.1rem)] ">
   {product.description}
 </p>
 
@@ -164,7 +164,7 @@ const recommendedProducts = products
 
             {/* Colors */}
                 <div>
-              <h3 className="text-semiBlack  text-[clamp(0.8rem,1vw,1rem)] font-satoshi font-light lg:text-[clamp(0.8rem,1.8vw,1rem)] mb-2">Select Colors</h3>
+              <h3 className="text-semiBlack  font-satoshi font-light text-[clamp(0.9rem,2vw,1.1rem)] mb-2">Select Colors</h3>
               <div className="flex gap-3">
                 {product.color?.map((color, i) => (
                   <button
@@ -185,13 +185,13 @@ const recommendedProducts = products
 
             {/* Sizes */}
             <div>
-              <h3 className=" text-semiBlack text-[clamp(0.8rem,1vw,1rem)] lg:text-[clamp(0.8rem,1.8vw,1rem)] font-satoshi font-light  mb-1 lg:mb-2">Choose Size</h3>
+              <h3 className=" text-semiBlack text-[clamp(0.9rem,2vw,1.1rem)] font-satoshi font-light  mb-1 lg:mb-2">Choose Size</h3>
               <div className="flex gap-3 flex-wrap">
                 {product.size?.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`xl:px-5 xl:py-3  py-1 px-3 text-[clamp(0.8rem,1vw,1rem)] font-satoshi font-light lg:text-[clamp(0.8rem,1.8vw,1rem)] rounded-full border ${
+                    className={`xl:px-5 xl:py-3  py-1 px-3 text-[clamp(0.8rem,1vw,1rem)] font-Satoshi font-light lg:text-[clamp(0.8rem,1.8vw,1rem)] rounded-full border ${
                       selectedSize === size
                         ? "bg-black text-white border-black"
                         : "bg-gray-100 text-gray-600 border-gray-300"
@@ -222,7 +222,7 @@ const recommendedProducts = products
         }
       }}
     >
-      <Minus className="w-4 h-4 xl:w-5 xl:h-5" />
+      <Minus className="w-4 h-4 xl:w-6 xl:h-7" />
     </button>
 
     {/* Show quantity (default 1 if not in cart) */}
@@ -258,7 +258,7 @@ const recommendedProducts = products
         }
       }}
     >
-      <Plus className="w-4 h-4 xl:w-5 xl:h-5" />
+      <Plus className="w-4 h-4 xl:w-6 xl:h-7" />
     </button>
   </div>
 

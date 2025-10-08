@@ -436,8 +436,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 text-center sm:text-left ">
           {/* Logo + About (full width on mobile + tablet, 1 col on lg) */}
           <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
-            <h2 className="text-2xl font-bold">SHOP.CO</h2>
-            <p className="mt-4 text-gray-600  text-[clamp(0.85rem,1vw,1.05rem)] leading-relaxed font-satoshi font-light max-w-xs sm:max-w-sm lg:max-w-none">
+            <p className=" text-[clamp(1.2rem,3.5vw,2rem)] font-bold">SHOP.CO</p>
+            <p className="mt-6  [1778px]:mt-16   text-gray-600  text-[clamp(0.9rem,1.2vw,0.9rem)] leading-relaxed font-Satoshi font-Light max-w-xs sm:max-w-sm lg:max-w-none">
               We have clothes that suits your style and which you’re proud to
               wear. From women to men.
             </p>
@@ -459,8 +459,8 @@ export default function Footer() {
  {/* Company */}
 <div className="text-center lg:text-left lg:ml-auto ">
   <div>
-    <h3 className="font-satoshi font-light mb-4 tracking-[0.1em] text-[clamp(0.9rem,1.5vw,1.25rem)]">COMPANY</h3>
-    <ul className="space-y-4 text-gray-600 text-sm font-satoshi font-light text-[clamp(0.9rem,1vw,1.4rem)]">
+    <h3 className="font-Satoshi font-Light mb-4 tracking-[0.1em] text-[clamp(1.2rem,1.7vw,1.29rem)]">COMPANY</h3>
+    <ul className="space-y-4 text-gray-600 font-Satoshi font-Light text-[clamp(1.1rem,1.5vw,1rem)]">
       <li>About</li>
       <li>Features</li>
       <li>Works</li>
@@ -472,9 +472,9 @@ export default function Footer() {
 {/* Help */}
 <div className="text-center lg:text-left lg:ml-auto">
   <div>
-    <h3 className="font-satoshi font-light mb-4 tracking-[0.1em] text-[clamp(0.9rem,1.5vw,1.25rem)]">HELP</h3>
-    <ul className="space-y-4 text-gray-600 text-sm font-satoshi font-light text-[clamp(0.9rem,1vw,1.4rem)]">
-      <li>Customer Support</li>
+    <h3 className="font-Satoshi font-Light mb-4 tracking-[0.1em] text-[clamp(1.2rem,1.7vw,1.29rem)]">HELP</h3>
+    <ul className="space-y-4 text-gray-600 font-Satoshi font-Light  text-[clamp(1.1rem,1.5vw,1rem)] ">
+      <li>Customer Support</li>                                       
       <li>Delivery Details</li>
       <li>Terms & Conditions</li>
       <li>Privacy Policy</li>
@@ -485,8 +485,8 @@ export default function Footer() {
 {/* FAQ */}
 <div className="text-center lg:text-left lg:ml-auto">
   <div>
-    <h3 className="font-satoshi font-light mb-4 tracking-[0.1em] text-[clamp(0.9rem,1.5vw,1.25rem)]">FAQ</h3>
-    <ul className="space-y-4 text-gray-600 text-sm font-satoshi font-light text-[clamp(0.9rem,1vw,1.4rem)]">
+    <h3 className="font-Satoshi font-Light mb-4 tracking-[0.1em] text-[clamp(1.2rem,1.7vw,1.29rem)]">FAQ</h3>
+    <ul className="space-y-4 text-gray-600 font-Satoshi font-Light  text-[clamp(1.1rem,1.5vw,1rem)]">
       <li>Account</li>
       <li>Manage Deliveries</li>
       <li>Orders</li>
@@ -498,8 +498,8 @@ export default function Footer() {
 {/* Resources */}
 <div className="text-center lg:text-left lg:ml-auto">
   <div>
-    <h3 className="font-satoshi font-light mb-4 tracking-[0.1em]  text-[clamp(0.9rem,1.5vw,1.25rem)]">RESOURCES</h3>
-    <ul className="space-y-4 text-gray-600 text-sm font-satoshi font-light text-[clamp(0.9rem,1vw,1.4rem)]">
+    <h3 className="font-Satoshi font-Light mb-4 tracking-[0.1em] text-[clamp(1.2rem,1.7vw,1.29rem)]">RESOURCES</h3>
+    <ul className="space-y-4 text-gray-600 font-Satoshi font-Light text-[clamp(1.1rem,1.5vw,1rem)] ">
       <li>Free eBooks</li>
       <li>Development Tutorial</li>
       <li>How to - Blog</li>
@@ -517,7 +517,7 @@ export default function Footer() {
 
         {/* Bottom line */}
         <div className="border-t border-gray-300 mt-10 pt-2 flex flex-col md:flex-row justify-between items-center gap-4 ">
-          <p className="text-gray-500 text-sm font-satoshi font-light text-center">
+          <p className="text-gray-500 text-[clamp(0.9rem,1.2vw,0.9rem)] font-satoshi font-light text-center">
             Shop.co © 2000-2023, All Rights Reserved
           </p>
 
@@ -527,22 +527,22 @@ export default function Footer() {
   <img
     src="/visa.png"
     alt="Visa"
-    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
+    className="h-10 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/badge.png"
     alt="Badge"
-    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
+    className="h-10 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/Paypal.png"
     alt="PayPal"
-    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
+    className="h-10 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/apple.png"
     alt="ApplePay"
-    className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
+    className="h-10 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain"
   />
   <img
     src="/g.png"

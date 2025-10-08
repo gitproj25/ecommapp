@@ -16,7 +16,7 @@ export default function DressStyleGrid() {
   return (
     <section className="w-full py-8 px-6">
       <div
-        className="bg-[#F0F0F0] max-w-[clamp(360px,92%,2140px)] mx-auto rounded-2xl 
+        className="bg-[#F0F0F0] max-w-[clamp(360px,92%,2140px)] mx-auto rounded-[3rem]
             p-14 pb-20 
             max-[480px]:p-4 max-[480px]:pb-6"
       >
@@ -35,7 +35,7 @@ export default function DressStyleGrid() {
   key={i}
   className={`relative rounded-3xl overflow-hidden shadow-md transition-transform duration-300 transform hover:scale-105
     ${i === 1 || i === 2 ? "col-span-1 sm:col-span-1 lg:col-span-2" : "col-span-1"}
-    h-48 sm:h-72 md:h-80 lg:h-96`}
+    h-48 sm:h-64 md:h-72 lg:h-72 xl:h-80`}
 >
                 <Link
                   href={{
@@ -62,7 +62,7 @@ export default function DressStyleGrid() {
                   />
                 </Link>
 
-                <div className=" block absolute left-4 top-4 text-black font-Satoshi  font-bold text-[clamp(1.25rem,3vw,2rem)] px-3 py-1 rounded-md">
+                <div className=" block absolute left-4 top-4 text-black font-Satoshi  font-bold text-[clamp(1.25rem,2.5vw,2.9rem)] px-3 py-1 rounded-md">
                   {style.name}
                 </div>
               </div>

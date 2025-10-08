@@ -14,7 +14,7 @@ import { setProducts, filterByColor,sortByPrice,filterByPrice,filterBySize,filte
 export default function Casual() {
     const searchParams = useSearchParams();
   const from = searchParams.get("from") || "Casual"; // default text if no query
-  const [selectedSize, setSelectedSize] = useState<string>("Large");
+  const [selectedSize, setSelectedSize] = useState<string>("");
 
   const searchQuery = searchParams.get("search") || "";
   const [price, setPrice] = useState([50, 200]);
@@ -142,9 +142,9 @@ useEffect(() => {
       {/* Sidebar Toggle (mobile) */}
 
 
-        <div className="p-4 text-[clamp(0.75rem,2vw,0.9rem)] text-gray-500 font-satoshi font-light">
+        <div className="p-4 text-[clamp(0.75rem,2vw,0.99rem)] text-gray-500 font-Satoshi font-Regular">
           <Link href="/">
-    Home</Link> {'>'} <span className="text-black font-satoshi font-light">{from}</span>
+    Home</Link> {'>'} <span className="text-black font-Satoshi font-Regular">{from}</span>
   </div>
       <div className="flex flex-col md:flex-row gap-6 justify-between">
           {/* Breadcrumb inside sidebar */}
@@ -162,7 +162,7 @@ useEffect(() => {
           {/* Sidebar Content */}
           <div className="p-4 space-y-6">
             {/* Filters Header */}
-            <h3 className="font-satoshi font-light text-lg mb-2 flex items-center justify-between">
+            <h3 className="font-Satoshi font-Medium  text-[clamp(1rem,2vw,1.2rem)] mb-2 flex items-center justify-between">
               Filters
               <button
                 className="hidden md:flex justify-end gap-2  text-white px-4 py-2 rounded-full mb-4"
@@ -191,12 +191,12 @@ useEffect(() => {
             <div className="border-b border-gray-300 pb-2 mb-4"></div>
 
             {/* Categories */}
-            <ul className="space-y-3 text-sm text-gray-700">
+            <ul className="space-y-3 text-[clamp(0.75rem,2vw,0.99rem)] text-gray-700">
               {["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"].map(
                 (item) => (
                   <li
                     key={item}
-                    className="flex justify-between items-center text-[clamp(0.75rem,2vw,0.9rem)] cursor-pointer hover:underline  font-satoshi font-light"
+                    className="flex justify-between items-center text-[clamp(0.75rem,2vw,0.99rem)] cursor-pointer hover:underline  font-satoshi font-light"
                      onClick={() => dispatch(filterByCategory(item))} // ✅ dispatch action
                   >
                     {item} <ChevronRight size={16} />
@@ -210,7 +210,7 @@ useEffect(() => {
             <div>
               {/* Header with toggle */}
               <button
-                className="flex justify-between w-full  mb-2 font-satoshi font-light"
+                className="flex justify-between w-full text-[clamp(1rem,2vw,1.2rem)]   mb-2 font-Satoshi font-bold"
                     onClick={() => setIsPriceOpen(!isPriceOpen)}
               >
                 Price
@@ -242,9 +242,9 @@ useEffect(() => {
   </Slider.Root>
 
   {/* Price labels above thumbs */}
-     <div className="absolute top-full left-0 w-full mt-1 pointer-events-none font-Satoshi font-light">
+     <div className="absolute top-full left-0 w-full mt-1 pointer-events-none font-Satoshi font-Medium symbol">
     <span
-      className="absolute text-[clamp(0.75rem,2vw,0.9rem)] text-gray-600"
+      className="absolute  text-black font-Satoshi font-bold symbol"
       style={{
         left: `${((price[0] - 50) / 150) * 100}%`,
         transform: "translateX(-50%)",
@@ -253,7 +253,7 @@ useEffect(() => {
       ${price[0]}
     </span>
     <span
-      className="absolute text-sm text-gray-600"
+      className="absolute  text-black font-Satoshi font-bold symbol"
       style={{
         left: `${((price[1] - 50) / 150) * 100}%`,
         transform: "translateX(-50%)",
@@ -272,7 +272,7 @@ useEffect(() => {
             <div className="w-auto">
               {/* Header with toggle */}
               <button
-                className="flex justify-between w-full  font-satoshi font-light  mb-2"
+                className="flex justify-between w-full text-[clamp(1rem,2vw,1.2rem)]   font-Satoshi font-bold  mb-2"
          onClick={() => setIsColorOpen(!isColorOpen)}
               >
                 Colors
@@ -308,7 +308,7 @@ useEffect(() => {
 
               <div>
                 <button
-                  className="flex justify-between items-center w-full font-satoshi font-light  mb-3"
+                  className="flex justify-between items-center text-[clamp(1rem,2vw,1.2rem)]  w-full font-Satoshi font-bold mb-3"
                    onClick={() => {
     setIsSizeOpen(!isSizeOpen);             // ✅ toggle open/close
   
@@ -321,7 +321,7 @@ useEffect(() => {
 
                 {/* Sizes Grid */}
                 {isSizeOpen && (
-                  <div className="  xl:mr-12 ml-0 text-[clamp(0.75rem,2vw,0.9rem)]">
+                  <div className="  xl:mr-12 ml-0 text-[clamp(0.75rem,2vw,0.99rem)]">
                     {sizes.map((size) => (
                       <button
                         key={size}
@@ -355,10 +355,10 @@ useEffect(() => {
 
             {/* Dress Style */}
             <div>
-              <button className="flex justify-between w-full font-satoshi font-light mb-2 ">
+              <button className="flex justify-between w-full text-[clamp(1rem,2vw,1.2rem)]  font-Satoshi font-bold mb-2 ">
                 Dress Style <ChevronDown size={16} />
               </button>
-              <ul className="space-y-3 text-[clamp(0.75rem,2vw,0.9rem)] text-gray-700 font-normal">
+              <ul className="space-y-3 text-[clamp(0.75rem,2vw,0.99rem)] text-gray-700 font-normal">
                 {dressStyles.map((style) => (
                   <li
                     key={style}
@@ -402,7 +402,7 @@ useEffect(() => {
         <main className="w-full md:w-[70%] lg:w-[75%] flex flex-col gap-6">
     
 
-          <h2 className="text-2xl font-satoshi font-light mb-6 flex justify-between items-center text-[clamp(1.25rem,2vw,2rem)]">
+          <h2 className="text-2xl font-Satoshi font-Medium mb-6 flex justify-between items-center text-[clamp(1.25rem,2vw,2rem)]">
             
             
             {from}
@@ -410,19 +410,19 @@ useEffect(() => {
             {currentProducts.length > 0 && (
   <div className="flex items-center gap-4 text-[clamp(0.9rem,1.3vw,1.3rem)] md:text-[clamp(0.7rem,1.5vw,1rem)] text-gray-600 font-normal">
    
-     <span className="font-satoshi font-light">
+     <span className="font-Satoshi font-Regular">
       Showing {((currentPage - 1) * productsPerPage) + 1}–
       {Math.min(currentPage * productsPerPage, filteredProducts.length)} 
       of  14  Products
     </span>
-    <span className="flex items-center gap-1 font-satoshi font-light hidden md:flex">
+    <span className="flex items-center gap-1 font-Satoshi font-Regular hidden md:flex">
       Sort by:{" "}
       <select 
         onChange={(e) => dispatch(sortByPrice(e.target.value as "low" | "high"))}
-        className="border font-satoshi font-light rounded px-2 py-1 text-[clamp(0.7rem,1.5vw,1rem)] "
+        className="border font-Satoshi font-Regular rounded px-2 py-1 text-[clamp(0.7rem,1.5vw,1rem)] "
       >
-        <option className="font-satoshi font-light"  value="low ">Price: Low to High</option>
-        <option className="font-satoshi font-light"   value="high ">Price: High to Low</option>
+        <option className="font-Satoshi font-Regular"  value="low ">Price: Low to High</option>
+        <option className="font-Satoshi font-Regular"   value="high ">Price: High to Low</option>
       </select>
     </span>
   </div>
@@ -473,7 +473,7 @@ useEffect(() => {
           />
         </Link>
       </div>
-      <h3 className="font-Satoshi font-extrabold  text-[clamp(0.75rem,2vw,1.125rem)] truncate mt-2">
+      <h3 className="font-Satoshi font-bold  text-[clamp(0.75rem,2vw,1.125rem)] truncate mt-2">
         {product.name}
       </h3>
       <div className="flex items-center gap-1 text-yellow-500 ">
@@ -491,20 +491,22 @@ useEffect(() => {
               ★
             </span>
           ))}
-            <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
+            <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-Satoshi symbol text-gray-600">
   <span className="font-sans">{product.rating}</span>/5
 </span>
       </div>
       <div className="flex items-center gap-2 mt-2">
-        <span className="font-Satoshi font-extraboldt text-[clamp(0.7rem,3vw,1.2rem)]">${product.price}</span>
+        <span className="font-Satoshi font-bold text-[clamp(0.7rem,3vw,1.2rem)]">${product.price}</span>
         {product.oldPrice && (
           <>
-            <span className="line-through text-gray-400  font-satoshi font-light text-[clamp(0.7rem,3vw,1.2rem)]">
+            <span className="line-through text-gray-400 font-Satoshi font-bold text-[clamp(0.7rem,3vw,1.2rem)]">
               ${product.oldPrice}
             </span>
-            <span className="bg-[#FF33331A] rounded-full px-2 text-red-500 text-[clamp(0.6rem,3vw,1rem)] font-satoshi font-light">
-              {product.discount}
-            </span>
+              {product.discount && ( // 👈 only show if discount is available
+        <span className="bg-[#FF33331A] rounded-full px-3 py-1 text-red-500 text-[clamp(0.6rem,3vw,1rem)] font-Satoshi font-bold">
+          {product.discount}
+        </span>
+      )}
           </>
         )}
       </div>
