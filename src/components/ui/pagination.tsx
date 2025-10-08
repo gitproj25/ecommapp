@@ -135,11 +135,11 @@ export default function Pagination({
     <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 py-6">
       {/* Previous */}
       <button
-        className="flex items-center gap-1 border px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm hover:bg-gray-100 disabled:opacity-50"
+        className="flex items-center gap-1 border px-2 sm:px-3 py-1 text-[#000000]   rounded-md text-xs sm:text-sm font-Satoshi font-Regular hover:bg-gray-100 disabled:opacity-50"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <ChevronLeft size={16} className="hidden sm:inline" /> Previous
+        <ChevronLeft size={16} className="hidden sm:inline text-[clamp(0.75rem,2vw,0.9rem)] " /> Previous
       </button>
 
       {/* Page Numbers */}
@@ -167,11 +167,12 @@ export default function Pagination({
 
       {/* Next */}
       <button
-        className="flex items-center gap-1 border px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm hover:bg-gray-100 disabled:opacity-50"
+        className="flex items-center gap-1 border px-2 sm:px-3 py-1 text-[#000000]   rounded-md text-xs sm:text-sm font-Satoshi font-Regular hover:bg-gray-100 disabled:opacity-50"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Next <ChevronRight size={16} className="hidden sm:inline" />
+        Next <ChevronRight size={16} className="hidden sm:inline text-[clamp(0.75rem,2vw,0.9rem)] 
+font-Satoshi font-Regular" />
       </button>
     </div>
   );

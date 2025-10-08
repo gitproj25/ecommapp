@@ -142,7 +142,7 @@ useEffect(() => {
       {/* Sidebar Toggle (mobile) */}
 
 
-        <div className="p-4 text-[clamp(0.75rem,2vw,0.99rem)] text-gray-500 font-Satoshi font-Regular">
+        <div className="p-4 text-[clamp(1rem,1.1vw,1.4rem)] text-gray-500 font-Satoshi font-Regular">
           <Link href="/">
     Home</Link> {'>'} <span className="text-black font-Satoshi font-Regular">{from}</span>
   </div>
@@ -162,14 +162,14 @@ useEffect(() => {
           {/* Sidebar Content */}
           <div className="p-4 space-y-6">
             {/* Filters Header */}
-            <h3 className="font-Satoshi font-Medium  text-[clamp(1rem,2vw,1.2rem)] mb-2 flex items-center justify-between">
+            <h3 className="font-Satoshi font-Medium  text-[clamp(1rem,2vw,1.25rem)] mb-2 flex items-center justify-between">
               Filters
               <button
                 className="hidden md:flex justify-end gap-2  text-white px-4 py-2 rounded-full mb-4"
                 onClick={() => setIsSidebarOpen(true)}
               >
                 <Image
-                  src="/filter.png"
+                  src="/blackfilter.png"
                   alt="filter"
                   width={20}
                   height={20}
@@ -196,7 +196,7 @@ useEffect(() => {
                 (item) => (
                   <li
                     key={item}
-                    className="flex justify-between items-center text-[clamp(0.75rem,2vw,0.99rem)] cursor-pointer hover:underline  font-satoshi font-light"
+                    className="flex justify-between items-center text-[clamp(0.75rem,2vw,1rem)] cursor-pointer hover:underline  font-satoshi font-light"
                      onClick={() => dispatch(filterByCategory(item))} // ✅ dispatch action
                   >
                     {item} <ChevronRight size={16} />
@@ -210,7 +210,7 @@ useEffect(() => {
             <div>
               {/* Header with toggle */}
               <button
-                className="flex justify-between w-full text-[clamp(1rem,2vw,1.2rem)]   mb-2 font-Satoshi font-bold"
+                className="flex justify-between w-full text-[clamp(1rem,2vw,1.25rem)]   mb-2 font-Satoshi font-bold"
                     onClick={() => setIsPriceOpen(!isPriceOpen)}
               >
                 Price
@@ -272,7 +272,7 @@ useEffect(() => {
             <div className="w-auto">
               {/* Header with toggle */}
               <button
-                className="flex justify-between w-full text-[clamp(1rem,2vw,1.2rem)]   font-Satoshi font-bold  mb-2"
+                className="flex justify-between w-full text-[clamp(1rem,2vw,1.25rem)]   font-Satoshi font-bold  mb-2"
          onClick={() => setIsColorOpen(!isColorOpen)}
               >
                 Colors
@@ -308,7 +308,7 @@ useEffect(() => {
 
               <div>
                 <button
-                  className="flex justify-between items-center text-[clamp(1rem,2vw,1.2rem)]  w-full font-Satoshi font-bold mb-3"
+                  className="flex justify-between items-center text-[clamp(1rem,2vw,1.25rem)]  w-full font-Satoshi font-bold mb-3"
                    onClick={() => {
     setIsSizeOpen(!isSizeOpen);             // ✅ toggle open/close
   
@@ -321,7 +321,7 @@ useEffect(() => {
 
                 {/* Sizes Grid */}
                 {isSizeOpen && (
-                  <div className="  xl:mr-12 ml-0 text-[clamp(0.75rem,2vw,0.99rem)]">
+                  <div className="  xl:mr-12 ml-0 text-[clamp(0.75rem,2vw,0.9rem)]">
                     {sizes.map((size) => (
                       <button
                         key={size}
@@ -355,10 +355,10 @@ useEffect(() => {
 
             {/* Dress Style */}
             <div>
-              <button className="flex justify-between w-full text-[clamp(1rem,2vw,1.2rem)]  font-Satoshi font-bold mb-2 ">
+              <button className="flex justify-between w-full text-[clamp(1rem,2vw,1.25rem)]  font-Satoshi font-bold mb-2 ">
                 Dress Style <ChevronDown size={16} />
               </button>
-              <ul className="space-y-3 text-[clamp(0.75rem,2vw,0.99rem)] text-gray-700 font-normal">
+              <ul className="space-y-3 text-[clamp(1rem,1.1vw,1.4rem)]  text-gray-700 font-normal">
                 {dressStyles.map((style) => (
                   <li
                     key={style}
@@ -382,7 +382,7 @@ useEffect(() => {
     // Then apply all filters at once
     dispatch(applyAllFilters());
   }}
-  className="w-full bg-black text-white py-2 rounded-full mt-4"
+  className="w-full bg-black font-Satoshi font-Regular text-[clamp(0.75rem,2vw,0.9rem)] text-white py-2 rounded-full mt-4"
 >
   Apply Filter
 </button>
@@ -421,8 +421,8 @@ useEffect(() => {
         onChange={(e) => dispatch(sortByPrice(e.target.value as "low" | "high"))}
         className="border font-Satoshi font-Regular rounded px-2 py-1 text-[clamp(0.7rem,1.5vw,1rem)] "
       >
-        <option className="font-Satoshi font-Regular"  value="low ">Price: Low to High</option>
-        <option className="font-Satoshi font-Regular"   value="high ">Price: High to Low</option>
+        <option className="font-Satoshi font-Regular text-[clamp(0.7rem,1.5vw,1rem)]"   value="low ">Price: Low to High</option>
+        <option className="font-Satoshi font-Regular text-[clamp(0.7rem,1.5vw,1rem)]"   value="high ">Price: High to Low</option>
       </select>
     </span>
   </div>
@@ -434,7 +434,7 @@ useEffect(() => {
               onClick={() => setIsSidebarOpen(true)}
             >
               <Image
-                src="/filter.png"
+                src="/blackfilter.png"
                 alt="filter"
                 width={20}
                 height={20}
@@ -472,11 +472,11 @@ useEffect(() => {
             className="object-cover"
           />
         </Link>
-      </div>
-      <h3 className="font-Satoshi font-bold  text-[clamp(0.75rem,2vw,1.125rem)] truncate mt-2">
+      </div>  
+      <h3 className="font-Satoshi font-bold leading-[1]  text-[clamp(0.9rem,2.2vw,1.26rem)]  h-[1.3rem] sm:h-[1.2rem] md:h-[1.9rem]  mt-2">
         {product.name}
       </h3>
-      <div className="flex items-center gap-1 text-yellow-500 ">
+      <div className="flex items-center gap-1 text-yellow-500 h-[1.79rem] sm:h-[1.75rem] md:h-[1.9rem] ">
         {/* {"★".repeat(Math.round(product.rating))}
         <span className="text-gray-500">
           ({product.reviews})
@@ -492,14 +492,18 @@ useEffect(() => {
             </span>
           ))}
             <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-Satoshi symbol text-gray-600">
-  <span className="font-sans">{product.rating}</span>/5
+      <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
+  <span className="font-Satoshi symbol font-Medium text-[#000000]">{product.rating}</span>
+<span className="font-Satoshi text-gray-500 font-light ml-1">/5</span>
+
+</span>
 </span>
       </div>
-      <div className="flex items-center gap-2 mt-2">
-        <span className="font-Satoshi font-bold text-[clamp(0.7rem,3vw,1.2rem)]">${product.price}</span>
+      <div className="flex items-center gap-2 mt-2  h-[1.5rem] sm:h-[2rem] md:h-[1.9rem] ">
+        <span className="font-Satoshi font-bold text-[clamp(0.9rem,2.2vw,1.299rem)]  ">${product.price}</span>
         {product.oldPrice && (
           <>
-            <span className="line-through text-gray-400 font-Satoshi font-bold text-[clamp(0.7rem,3vw,1.2rem)]">
+            <span className="line-through text-gray-400 font-Satoshi font-bold text-[clamp(0.9rem,2.2vw,1.299rem)]  ">
               ${product.oldPrice}
             </span>
               {product.discount && ( // 👈 only show if discount is available

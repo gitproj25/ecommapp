@@ -51,10 +51,10 @@ const total = subtotal - totalDiscount + deliveryFee;
   <div className="w-full flex flex-col gap-4 max-h-full">
     <nav className="text-sm text-gray-500 flex gap-2">
       <Link href="/">
-      <span className="cursor-pointer hover:text-black text-[clamp(0.75rem,2vw,0.999rem)] font-Satoshi font-light">Home</span>
+      <span className="cursor-pointer hover:text-black text-[clamp(1rem,2vw,0.999rem)] font-Satoshi font-light">Home</span>
       </Link>
       <span>{'>'}</span>
-      <span className="cursor-pointer hover:text-black text-[clamp(0.75rem,2vw,0.999rem)] font-Satoshi font-light">Cart</span>
+      <span className="cursor-pointer hover:text-black text-[clamp(1rem,2vw,0.999rem)] font-Satoshi font-light">Cart</span>
     </nav>
     <h1 className="font-extrabold uppercase text-[clamp(1.2rem,2vw,6rem)] lg:text-[clamp(1.2rem,2.6vw,9rem)] ">YOUR CART</h1>
   </div>
@@ -85,7 +85,7 @@ const total = subtotal - totalDiscount + deliveryFee;
 
             <div className="flex flex-col flex-1 space-y-1 sm:space-y-1">
               <div className="flex justify-between">
-                <h3 className="font-Satoshi font-bold text-[clamp(0.9rem,2.2vw,1.2rem)]">
+                <h3 className="font-Satoshi font-bold text-[clamp(1.1rem,2.2vw,1.2rem)]">
                   {item.name}
                 </h3>
                 <button onClick={() => dispatch(clearCart())}>
@@ -93,11 +93,11 @@ const total = subtotal - totalDiscount + deliveryFee;
                 </button>
               </div>
 
-              <p className="font-thin text-[clamp(0.75rem,2vw,1rem)]">
+              <p className="font-thin text-[clamp(1rem,2vw,1rem)]">
                 <span className="text-black">Size:</span>{" "}
                 <span className="text-gray-500">{item.selectedSize}</span>
               </p>
-              <p className="font-thin text-[clamp(0.75rem,2vw,1rem)] mt-1">
+              <p className="font-thin text-[clamp(1rem,2vw,1rem)] mt-1">
                 <span className="text-black">Color:</span>{" "}
                 <span className="text-gray-500">{item.selectedColor}</span>
               </p>
@@ -151,24 +151,24 @@ const total = subtotal - totalDiscount + deliveryFee;
         Order Summary
       </h2>
 
-      <div className="flex justify-between text-[clamp(0.9rem,2.2vw,1.2rem)]">
+      <div className="flex justify-between text-[clamp(1.2rem,2.2vw,1.2rem)]">
         <span className="text-gray-500  font-satoshi font-light ">Subtotal</span>
         <span className="text-black  font-Satoshi font-bold   ">${subtotal}</span>
       </div>
 
-      <div className="flex justify-between text-[clamp(0.9rem,2.2vw,1.2rem)] text-red-500">
+      <div className="flex justify-between text-[clamp(1.2rem,2.2vw,1.2rem)] text-red-500">
         <span className="text-gray-500 font-satoshi font-light">Discount (-20%)</span>
        <span className="font-Satoshi font-bold">-${totalDiscount.toFixed(2)}</span>
       </div>
 
-      <div className="flex justify-between text-[clamp(0.9rem,2.2vw,1.2rem)]">
+      <div className="flex justify-between text-[clamp(1.2rem,2.2vw,1.2rem)]">
         <span className="text-gray-500 font-satoshi font-light">Delivery Fee</span>
         <span className="font-Satoshi font-bold">$15</span>
       </div>
 
       <div className="border-t my-2"></div>
 
-      <div className="flex justify-between font-bold text-[clamp(0.9rem,2.2vw,1.2rem)]">
+      <div className="flex justify-between font-bold text-[clamp(1.2rem,2.2vw,1.2rem)]">
         <span className="text-black  font-satoshi font-light">Total</span>
         <span className="font-Satoshi font-bold">${total}</span>
       </div>
@@ -179,15 +179,15 @@ const total = subtotal - totalDiscount + deliveryFee;
           <input
             type="text"
             placeholder="Add promo code"
-            className="w-full border rounded-full font-satoshi font-light bg-[#F0F0F0] px-8 py-2 text-[clamp(0.75rem,2vw,1rem)]"
+            className="w-full border rounded-full font-satoshi font-light bg-[#F0F0F0] px-8 py-2 text-[clamp(1rem,2vw,1rem)]"
           />
         </div>
-        <button className="bg-black text-white rounded-full font-satoshi font-light px-10 py-2 text-[clamp(0.75rem,2vw,1rem)]">
+        <button className="bg-black text-white rounded-full font-satoshi font-light px-10 py-2 text-[clamp(1rem,2vw,1rem)]">
           Apply
         </button>
       </div>
 <Link href="">
-      <button className="w-full bg-black text-white rounded-full py-3 mt-4 font-satoshi font-light text-[clamp(0.75rem,2vw,1rem)]">
+      <button className="w-full bg-black text-white rounded-full py-3 mt-4 font-satoshi font-light text-[clamp(1rem,2vw,1rem)]">
         Go to Checkout →
       </button>
       </Link>

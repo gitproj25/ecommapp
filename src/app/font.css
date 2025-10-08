@@ -132,7 +132,7 @@
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Light.otf') format('opentype');
-  font-weight: 300;
+  font-weight: 100;
   font-style: normal;
 }
 @font-face {
@@ -168,7 +168,7 @@
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi/Satoshi-Bold.otf') format('opentype');
-  font-weight: 700;
+  font-weight: 800;
   font-style: normal;
 }
 @font-face {

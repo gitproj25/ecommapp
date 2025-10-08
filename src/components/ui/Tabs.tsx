@@ -11,7 +11,7 @@ export default function ProductTabs() {
       {/* Tabs */}
       <div className="flex border-b mb-6">
   <button
-    className={`flex-1 text-center py-2 font-Satoshi font-light text-[clamp(0.9rem,2vw,1.3rem)] ${
+    className={`flex-1 text-center py-2 font-Satoshi font-Regular text-[clamp(0.9rem,2vw,1.3rem)] ${
       activeTab === "details" ? "border-b-2 border-black text-black" : "text-gray-500"
     }`}
     onClick={() => setActiveTab("details")}
@@ -20,7 +20,7 @@ export default function ProductTabs() {
   </button>
 
   <button
-    className={`flex-1 text-center py-2 font-Satoshi font-light text-[clamp(0.9rem,2vw,1.3rem)] ${
+    className={`flex-1 text-center py-2 font-Satoshi font-Regular text-[clamp(0.9rem,2vw,1.3rem)] ${
       activeTab === "reviews" ? "border-b-2 border-black text-black" : "text-gray-500"
     }`}
     onClick={() => setActiveTab("reviews")}
@@ -29,7 +29,7 @@ export default function ProductTabs() {
   </button>
 
   <button
-    className={`flex-1 text-center py-2 font-Satoshi font-light text-[clamp(0.9rem,2vw,1.3rem)] ${
+    className={`flex-1 text-center py-2 font-Satoshi font-Regular text-[clamp(0.9rem,2vw,1.3rem)] ${
       activeTab === "faq" ? "border-b-2 border-black text-black" : "text-gray-500"
     }`}
     onClick={() => setActiveTab("faq")}

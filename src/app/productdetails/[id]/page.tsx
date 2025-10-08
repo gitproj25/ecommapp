@@ -125,35 +125,41 @@ const recommendedProducts = products
             {/* Rating */}
             <div className="flex items-center gap-2">
               <div className="text-yellow-500 lg:text-[clamp(1rem,2vw,12rem)]">★★★★★</div>
-              <div className="text-gray-500 font-satoshi font-light text-[clamp(0.75rem,2vw,1rem)]">
+              {/* <div className="text-gray-500 font-satoshi font-light text-[clamp(0.75rem,2vw,1rem)]">
                 {product.rating}
-              </div>
+              </div> */}
+
+               <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
+  <span className="font-Satoshi symbol font-Medium text-[#000000]">{product.rating}</span>
+<span className="font-Satoshi text-gray-500 font-light ml-1">/5</span>
+
+</span>
             </div>
 
             {/* Price */}
     <div className="flex items-center gap-3">
   {/* Discounted Price */}
-  <span className="text-[clamp(0.75rem,2vw,1rem)] font-Satoshi font-bold  lg:text-[clamp(0.5rem,3vw,1.5rem)] ">
+  <span className="text-[clamp(0.75rem,2.1vw,2.6rem)] font-Satoshi font-bold  ">
     ${product.price} {/* discounted price */}
   </span>
 
   {/* Old Price */}
   {product.oldPrice && (
-    <span className="line-through font-Satoshi font-bold  text-gray-400 text-[clamp(0.75rem,2vw,1rem)] lg:text-[clamp(0.5rem,3vw,1.5rem)]">
+    <span className="line-through font-Satoshi font-bold  text-gray-400 text-[clamp(0.75rem,2.1vw,2.6rem)]">
       ${product.oldPrice} {/* original price */}
     </span>
   )}
 
   {/* Discount Percentage */}
   {product.oldPrice && (
-    <span className="bg-[#FF33331A] font-Satoshi font-bold  text-red-400  text-[clamp(0.75rem,1.5vw,1rem)] lg:text-[clamp(0.5rem,3vw,1rem)] px-2 py-1 
+    <span className="bg-[#FF33331A] font-Satoshi font-bold  text-red-400  text-[clamp(0.75rem,3vw,1rem)]  px-2 py-1 
     rounded-full">
       -{Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
     </span>
   )}
 </div>
- {/* Description */}
-        <p className="text-semiBlack font-Satoshi font-light text-[clamp(0.9rem,2vw,1.1rem)] ">
+ {/* Description  2xl:text-[clamp(0.9rem,2vw,1.2rem)] xl:text-[clamp(0.9rem,2vw,1.3rem)] */}
+        <p className="text-semiBlack font-Satoshi font-light text-[clamp(0.9rem,2vw,1rem)]">
   {product.description}
 </p>
 
@@ -164,7 +170,7 @@ const recommendedProducts = products
 
             {/* Colors */}
                 <div>
-              <h3 className="text-semiBlack  font-satoshi font-light text-[clamp(0.9rem,2vw,1.1rem)] mb-2">Select Colors</h3>
+              <h3 className="text-semiBlack  font-satoshi font-light text-[clamp(0.9rem,2vw,1rem)] mb-2">Select Colors</h3>
               <div className="flex gap-3">
                 {product.color?.map((color, i) => (
                   <button
@@ -185,7 +191,7 @@ const recommendedProducts = products
 
             {/* Sizes */}
             <div>
-              <h3 className=" text-semiBlack text-[clamp(0.9rem,2vw,1.1rem)] font-satoshi font-light  mb-1 lg:mb-2">Choose Size</h3>
+              <h3 className=" text-semiBlack text-[clamp(0.9rem,2vw,1rem)] font-satoshi font-light  mb-1 lg:mb-2">Choose Size</h3>
               <div className="flex gap-3 flex-wrap">
                 {product.size?.map((size) => (
                   <button
