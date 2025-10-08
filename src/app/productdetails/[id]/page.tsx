@@ -159,7 +159,7 @@ const recommendedProducts = products
   )}
 </div>
  {/* Description  2xl:text-[clamp(0.9rem,2vw,1.2rem)] xl:text-[clamp(0.9rem,2vw,1.3rem)] */}
-        <p className="text-semiBlack font-Satoshi font-light text-[clamp(0.9rem,2vw,1rem)]">
+        <p className="text-semiBlack font-Satoshi font-light text-[clamp(0.9rem,2vw,1.1rem)] ">
   {product.description}
 </p>
 
