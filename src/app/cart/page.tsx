@@ -46,15 +46,15 @@ const total = subtotal - totalDiscount + deliveryFee;
 
 
 
-<div className="sm:max-w-[clamp(360px,92%,2140px)] px-6 sm:px-6 mt-10 mx-auto flex flex-col gap-6 mb-60">
+<div className="sm:max-w-[clamp(360px,92%,2140px)] px-6 sm:px-6 mt-10 mx-auto flex flex-col gap-1 mb-60">
   {/* Breadcrumb + Heading (Full Width, aligned top) */}
-  <div className="w-full flex flex-col gap-2 max-h-full">
+  <div className="w-full flex flex-col gap-4 max-h-full">
     <nav className="text-sm text-gray-500 flex gap-2">
       <Link href="/">
-      <span className="cursor-pointer hover:text-black font-satoshi font-light">Home</span>
+      <span className="cursor-pointer hover:text-black text-[clamp(0.75rem,2vw,0.999rem)] font-Satoshi font-light">Home</span>
       </Link>
       <span>{'>'}</span>
-      <span className="cursor-pointer hover:text-black font-satoshi font-light">Cart</span>
+      <span className="cursor-pointer hover:text-black text-[clamp(0.75rem,2vw,0.999rem)] font-Satoshi font-light">Cart</span>
     </nav>
     <h1 className="font-extrabold uppercase text-[clamp(1.2rem,2vw,6rem)] lg:text-[clamp(1.2rem,2.6vw,9rem)] ">YOUR CART</h1>
   </div>
@@ -80,12 +80,12 @@ const total = subtotal - totalDiscount + deliveryFee;
               alt={item.name}
               width={100}
               height={100}
-              className="rounded-lg object-cover w-24 h-24 sm:w-32 sm:h-32"
+              className="rounded-lg object-cover w-24 h-24 sm:w-40 sm:h-40"
             />
 
             <div className="flex flex-col flex-1 space-y-1 sm:space-y-1">
               <div className="flex justify-between">
-                <h3 className="font-satoshi font-light text-[clamp(0.875rem,2vw,1.1rem)]">
+                <h3 className="font-Satoshi font-bold text-[clamp(0.9rem,2.2vw,1.2rem)]">
                   {item.name}
                 </h3>
                 <button onClick={() => dispatch(clearCart())}>
@@ -103,7 +103,7 @@ const total = subtotal - totalDiscount + deliveryFee;
               </p>
 
               <div className="flex justify-between items-center">
-                <p className=" font-Satoshi  text-[clamp(1.25rem,4vw,1.5rem)]">
+                <p className=" font-Satoshi font-bold  text-[clamp(1.25rem,4vw,1.5rem)]">
                   ${item.price}
                 </p>
                 <div className="flex items-center border rounded-2xl bg-[#F0F0F0]">
@@ -147,30 +147,30 @@ const total = subtotal - totalDiscount + deliveryFee;
 
     {/* Right Section: Order Summary */}
     <div className="w-full lg:w-2/5 border rounded-xl p-6 self-start space-y-4">
-      <h2 className="text-[clamp(1.4rem,3vw,1.6rem)] font-satoshi font-light  mb-4">
+      <h2 className="text-[clamp(1.4rem,3vw,1.6rem)] font-Satoshi font-bold mb-4">
         Order Summary
       </h2>
 
-      <div className="flex justify-between text-[clamp(0.75rem,2vw,1rem)]">
+      <div className="flex justify-between text-[clamp(0.9rem,2.2vw,1.2rem)]">
         <span className="text-gray-500  font-satoshi font-light ">Subtotal</span>
-        <span className="text-black  font-satoshi font-light   ">${subtotal}</span>
+        <span className="text-black  font-Satoshi font-bold   ">${subtotal}</span>
       </div>
 
-      <div className="flex justify-between text-[clamp(0.75rem,2vw,1rem)] text-red-500">
+      <div className="flex justify-between text-[clamp(0.9rem,2.2vw,1.2rem)] text-red-500">
         <span className="text-gray-500 font-satoshi font-light">Discount (-20%)</span>
-       <span className="  font-satoshi font-light">-${totalDiscount.toFixed(2)}</span>
+       <span className="font-Satoshi font-bold">-${totalDiscount.toFixed(2)}</span>
       </div>
 
-      <div className="flex justify-between text-[clamp(0.75rem,2vw,1rem)]">
+      <div className="flex justify-between text-[clamp(0.9rem,2.2vw,1.2rem)]">
         <span className="text-gray-500 font-satoshi font-light">Delivery Fee</span>
-        <span>$15</span>
+        <span className="font-Satoshi font-bold">$15</span>
       </div>
 
       <div className="border-t my-2"></div>
 
-      <div className="flex justify-between font-bold text-[clamp(0.75rem,2vw,1rem)]">
+      <div className="flex justify-between font-bold text-[clamp(0.9rem,2.2vw,1.2rem)]">
         <span className="text-black  font-satoshi font-light">Total</span>
-        <span className="font-Satoshi">${total}</span>
+        <span className="font-Satoshi font-bold">${total}</span>
       </div>
 
       <div className="flex gap-2 mt-4">

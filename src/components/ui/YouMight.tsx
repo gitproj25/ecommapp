@@ -57,7 +57,7 @@ export default function NewArrivals({ prod }: YouMightProps) {
 
 <div className="p-3 flex flex-col items-start text-left h-[7rem] sm:h-36">
   {/* Product name */}
-  <h3 className="text-[clamp(0.75rem,2vw,1.125rem)] w-full font-satoshi font-light h-[1.3rem] sm:h-[2rem]">
+  <h3 className="text-[clamp(0.75rem,2vw,1.125rem)] w-full font-Satoshi font-bold h-[1.3rem] sm:h-[2rem]">
     {product.name}
   </h3>
 
@@ -80,26 +80,26 @@ export default function NewArrivals({ prod }: YouMightProps) {
   </div>
 
   {/* Price (always bottom) */}
-  <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-satoshi font-light">
+  <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-Satoshi font-bold">
   {product.oldPrice ? (
     <>
       {/* Discounted price */}
-      <span className="text-black text-[clamp(1rem,3vw,1.5rem)]">
+      <span className="text-black text-[clamp(1rem,3vw,1.5rem)] font-Satoshi font-bold">
         ${product.price}
       </span>
 
       {/* Original price */}
-      <span className="line-through text-gray-400 text-[clamp(1rem,3vw,1.5rem)] font-satoshi font-light">
+      <span className="line-through text-gray-400 text-[clamp(1rem,3vw,1.5rem)] font-Satoshi font-bold">
         ${product.oldPrice}
       </span>
 
       {/* % Off badge */}
-      <span className="bg-red-100 text-red-500 font-medium px-2 py-0.5 rounded-full text-[clamp(0.7rem,2vw,0.9rem)]">
+      <span className="bg-red-100 text-red-500 font-Satoshi font-bold px-2 py-0.5 rounded-full text-[clamp(0.7rem,2vw,0.9rem)]">
         {Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}%
       </span>
     </>
   ) : (
-    <span className="text-black text-[clamp(1rem,3vw,1.5rem)]">
+    <span className="text-black text-[clamp(1rem,3vw,1.5rem)] font-Satoshi font-bold">
       ${product.price}
     </span>
   )}

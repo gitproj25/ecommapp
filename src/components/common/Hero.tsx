@@ -10,17 +10,17 @@ export default function Hero() {
         <div className="flex flex-col justify-center">
           {/* Text + Button */}
           <div className="space-y-4 text-start lg:text-left pt-6">
-            <p className="text-[clamp(2rem,4vw,3.8rem)] font-IntegralCF  font-light  leading-[1.1] text-[#000000]  ">
+            <p className="text-[clamp(2rem,4vw,3.8rem)] font-Satoshi font-Medium  leading-[1.1] text-[#000000]  ">
               FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
             </p>
-            <p className="text-[#00000099]  mx-auto lg:mx-0  font-satoshi font-light">
+            <p className="text-[#00000099]  mx-auto lg:mx-0 text-[clamp(0.89rem,1.2vw,1.3rem)] font-Satoshi font-light">
               Browse through our diverse range of meticulously crafted garments,
               designed to bring out your individuality and cater to your sense of style.
             </p>
 
             {/* Shop Now Button */}
             <Link href="/casual">
-            <button className="w-full sm:w-48 px-6 py-3 bg-black mt-6 text-white rounded-full font-satoshi font-thin hover:bg-gray-900">
+            <button className="w-full text-[clamp(0.89rem,1.2vw,1.3rem)]   sm:w-48 px-6 py-3 bg-black mt-6 text-white rounded-full font-satoshi font-thin hover:bg-gray-900">
               Shop Now
             </button>
             </Link>
@@ -42,8 +42,8 @@ export default function Hero() {
     {/* 200+ */}
   
     <div className="flex flex-col items-center lg:items-start  xl:border-r-2 border-gray-300 ml-8 lg:ml-0">
-      <p className=" text-[clamp(1.5rem,4vw,3rem)] font-satoshi font-thin">200+</p>
-      <p className="text-[clamp(0.6rem,2vw,1rem)] text-[#00000099] whitespace-nowrap font-satoshi font-thin">
+      <p className=" text-[clamp(1.5rem,4vw,3rem)] font-Satoshi font-Medium">200+</p>
+      <p className="text-[clamp(0.89rem,1.2vw,1.3rem)]   text-[#00000099] whitespace-nowrap font-satoshi font-thin">
         International Brands
       </p>
     </div>
@@ -54,8 +54,8 @@ export default function Hero() {
     {/* 2,000+ */}
     <div className="xl:border-r-2  border-gray-300 ">
     <div className="flex flex-col items-center lg:items-start border-l-2 sm:border-none border-gray-300 ">
-      <p className=" text-[clamp(1.5rem,4vw,3rem)] font-satoshi font-thin">2,000+</p>
-      <p className="text-[clamp(0.6rem,2vw,1rem)] text-[#00000099] whitespace-nowrap font-satoshi font-thin ">
+      <p className=" text-[clamp(1.5rem,4vw,3rem)] font-Satoshi font-Medium">2,000+</p>
+      <p className="text-[clamp(0.89rem,1.2vw,1.3rem)]   text-[#00000099] whitespace-nowrap font-satoshi font-thin ">
         High-Quality Products
       </p>
     </div></div>
@@ -64,8 +64,8 @@ export default function Hero() {
     {/* <div className="hidden lg:block w-px h-16 bg-gray-400 self-center"></div> */}
     {/* 30,000+ */}
     <div className="flex flex-col items-center col-span-2 lg:col-span-1 lg:items-start">
-      <p className=" text-[clamp(1.5rem,4vw,3rem)] font-satoshi font-light ">30,000+</p>
-      <p className="text-[clamp(0.6rem,2vw,1rem)] text-[#00000099] whitespace-nowrap font-satoshi font-thin">
+      <p className=" text-[clamp(1.5rem,4vw,3rem)] font-Satoshi font-Medium">30,000+</p>
+      <p className="text-[clamp(0.89rem,1.2vw,1.3rem)]   text-[#00000099] whitespace-nowrap font-satoshi font-thin">
         Happy Customers
       </p>
     </div>

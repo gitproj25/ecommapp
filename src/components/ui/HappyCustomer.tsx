@@ -174,7 +174,7 @@ export default function ReviewCarousel() {
 
   return (
     <section className="w-full relative overflow-hidden py-8">
-      <h2 className="max-w-[clamp(360px,92%,2140px)] mx-auto px-2 text-[clamp(1.3rem,4vw,3rem)] font-extrabold text-start mb-6">
+      <h2 className="max-w-[clamp(360px,92%,2140px)] mx-auto px-2 text-[clamp(1.5rem,4vw,3rem)] font-extrabold text-start mb-6">
         OUR HAPPY <br className="block sm:hidden" /> CUSTOMERS
       </h2>
 
