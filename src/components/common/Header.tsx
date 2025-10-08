@@ -252,7 +252,7 @@ export default function Header() {
   </div>
 
   {/* Desktop Nav */}
-  <nav className="hidden lg:flex gap-4 xl:gap-8 text-gray-700 font-normal relative ml-4">
+  <nav className="hidden lg:flex gap-4 xl:gap-8 text-gray-700  relative ml-4">
     <div
       className="relative"
       tabIndex={0}
@@ -262,7 +262,7 @@ export default function Header() {
         className="flex items-center gap-1 cursor-pointer"
         onClick={() => setIsShopOpen(!isShopOpen)}
       >
-        <span className="text-[clamp(0.75rem,1.2vw,2rem)] font-satoshi font-light">
+        <span className="text-[clamp(1rem,1.11vw,1.4rem)] text-[#000000] font-Satoshi font-Regular">
           Shop
         </span>
         <ChevronDown className="h-4 w-4" />
@@ -297,19 +297,19 @@ export default function Header() {
 
     <Link
       href="/#on-sale"
-      className="text-[clamp(0.75rem,1.2vw,2rem)] font-satoshi font-light"
+      className="text-[clamp(1rem,1.11vw,1.4rem)] text-[#000000] font-Satoshi font-Regular"
     >
       On Sale
     </Link>
     <Link
       href="/#new-arrivals"
-      className="text-[clamp(0.75rem,1.2vw,2rem)] font-satoshi font-light"
+      className="text-[clamp(1rem,1.11vw,1.4rem)] text-[#000000] font-Satoshi font-Regular"
     >
       New Arrivals
     </Link>
     <Link
       href="/#brands"
-      className="text-[clamp(0.75rem,1.2vw,2rem)] font-satoshi font-light"
+      className="text-[clamp(1rem,1.11vw,1.4rem)] text-[#000000] font-Satoshi font-Regular"
     >
       Brands
     </Link>
@@ -323,7 +323,7 @@ export default function Header() {
         type="text"
         value={query}
         placeholder="Search for products..."
-        className="bg-transparent outline-none w-full font-Satoshi font-light text-[clamp(0.75rem,1.2vw,2rem)]"
+        className="bg-transparent outline-none w-full font-Satoshi font-light text-[clamp(0.8rem,1vw,1.4rem)] "
         onChange={handleChange}
         onKeyDown={handleKeyDown}
       />

@@ -57,7 +57,7 @@ export default function NewArrivals({ prod }: YouMightProps) {
 
 <div className="p-3 flex flex-col items-start text-left h-[7rem] sm:h-36">
   {/* Product name */}
-  <h3 className="text-[clamp(0.75rem,2vw,1.125rem)] w-full font-Satoshi font-bold h-[1.3rem] sm:h-[2rem]">
+  <h3 className="text-[clamp(0.75rem,2vw,1.19rem)] leading-[1.1] w-full font-Satoshi font-bold h-[1.3rem] sm:h-[2rem]">
     {product.name}
   </h3>
 
@@ -68,15 +68,16 @@ export default function NewArrivals({ prod }: YouMightProps) {
   key={i}
   className={`${
     i < product.rating ? "text-yellow-400" : "text-gray-300"
-  } text-[clamp(1rem,2.5vw,2rem)]`}
+  } text-[clamp(1rem,2.5vw,1.8rem)]`}
 >
   ★
 </span>
 
     ))}
-    <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi font-light  text-gray-600">
-      {product.rating}/5
-    </span>
+    <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
+    <span className="font-Satoshi symbol font-Medium text-[#000000]">{product.rating}</span>
+<span className="font-Satoshi text-gray-500 font-light ml-1">/5</span>
+</span>
   </div>
 
   {/* Price (always bottom) */}

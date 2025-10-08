@@ -119,13 +119,14 @@ const ReviewCard = () => {
     </div>
 
     {/* Latest Button - hide on small screens */}
-    <button className="hidden sm:flex items-center font-satoshi font-light gap-2 bg-lightGray px-3 sm:px-10 py-1.5 sm:py-3 rounded-full  text-gray-700 hover:bg-gray-200 transition">
+    <button className="hidden sm:flex items-center font-Satoshi font-Regular gap-2 bg-lightGray px-3 sm:px-10 py-1.5 sm:py-3 rounded-full 
+text-[#000000]   hover:bg-gray-200 transition">
       Latest
       <ChevronDown size={16} />
     </button>
 
     {/* Write Review Button */}
-    <button className="flex items-center font-satoshi font-light gap-2 bg-black text-white px-4 sm:px-10 py-1.5 sm:py-3 rounded-full text-[clamp(1.1rem,1.5vw,1rem)]  hover:bg-gray-800 transition">
+    <button className="flex items-center font-Satoshi font-Regular gap-2 bg-black text-white px-4 sm:px-10 py-1.5 sm:py-3 rounded-full text-[clamp(1.1rem,1.5vw,1rem)]  hover:bg-gray-800 transition">
       Write Review
     </button>
   </div>
@@ -140,7 +141,7 @@ const ReviewCard = () => {
         {allReviews.slice(0, visibleCount).map((review, i) => (
         <div
   key={i}
-  className="border  rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-60 flex flex-col justify-between gap-3"
+  className="border  rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-60 flex flex-col justify-between gap-2"
 >  
 
 
@@ -172,7 +173,7 @@ const ReviewCard = () => {
 
   {/* Name + Check */}
   <div className="flex items-start gap-2">
-    <h3 className=" text-[clamp(0.9rem,2vw,1.2rem)] font-Satoshi font-bold">{review.name}</h3>
+    <p className=" text-[clamp(1rem,2vw,1.3rem)] font-Satoshi font-bold">{review.name}</p>
       {/* <CheckCircle size={18} className="text-green-500" /> */}
       <Image
       src="/right.png"
@@ -184,10 +185,10 @@ const ReviewCard = () => {
   </div>
 
   {/* Comment */}
-  <p className="text-semiBlack text-[clamp(0.8rem,1vw,1rem)]   text-gray-300 font-Satoshi font-Regular">"{review.comment}"</p>
+  <p className="text-semiBlack text-[clamp(0.9rem,1vw,1.6rem)]   text-gray-300 font-Satoshi font-Regular">"{review.comment}"</p>
 
   {/* Date */}
-  <p className="font-Satoshi text-gray-400 text-[clamp(0.9rem,2vw,1rem)] text-semiBlack">Posted on {review.date}</p>
+  <p className="font-Satoshi text-gray-400 text-[clamp(0.9rem,1vw,1.7rem)] text-semiBlack">Posted on {review.date}</p>
 </div>
 
         ))}

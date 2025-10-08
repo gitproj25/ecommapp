@@ -201,7 +201,7 @@ export default function ReviewCarousel() {
                   ))}
                 </div>
                 <div className="flex items-center space-x-2">
-                  <p className="m-0 font-Satoshi font-extrabold text-[clamp(0.8rem,1.2vw,1.4rem)]">
+                  <p className="m-0 font-Satoshi font-extrabold text-[clamp(1rem,1.2vw,1.4rem)]">
                     {r.name}
                   </p>
                   <Image
@@ -212,7 +212,7 @@ export default function ReviewCarousel() {
                     className="mt-0.5"
                   />
                 </div>
-                <p className="mt-2 font-satoshi font-thin text-[clamp(0.75rem,1.2vw,1.1rem)]">
+                <p className="mt-2 font-Satoshi font-thin text-[clamp(1rem,1.2vw,1.1rem)]">
                   "{r.review}"
                 </p>
               </div>

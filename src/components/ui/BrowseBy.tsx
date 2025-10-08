@@ -62,7 +62,7 @@ export default function DressStyleGrid() {
                   />
                 </Link>
 
-                <div className=" block absolute left-4 top-4 text-black font-Satoshi  font-bold text-[clamp(1.25rem,2.5vw,2.9rem)] px-3 py-1 rounded-md">
+                <div className=" block absolute left-4 top-4 text-black font-Satoshi  font-bold text-[clamp(1.6rem,2.5vw,2.9rem)] px-3 py-1 rounded-md">
                   {style.name}
                 </div>
               </div>

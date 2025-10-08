@@ -59,7 +59,7 @@ fontFamily: {
         "infinite-scroll": "infinite-scroll 60s linear infinite",
         "infinite-scroll-reverse": "infinite-scroll-reverse 50s linear infinite ",
         
-        marquee: "marquee 20s linear infinite",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },

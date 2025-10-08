@@ -494,7 +494,7 @@ export default function NewArrivals() {
   }}
   passHref
 >
-  <button className=" mt-6 border border-gray-300 font-satoshi font-light text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 
+  <button className=" mt-6 border border-gray-300 font-Satoshi font-Regular text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 
    w-full  sm:w-[230px]  ">
     View All
   </button>
@@ -526,7 +526,7 @@ function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-3 flex flex-col items-start text-left h-[7rem] sm:h-36">
-        <h3 className="text-[clamp(0.75rem,2vw,1.125rem)]  font-Satoshi font-bold   w-full  h-[1.3rem] sm:h-[2rem]">
+        <h3 className="text-[clamp(0.9rem,2vw,1.125rem)] leading-[1]   font-Satoshi font-bold   w-full  h-[1.3rem] sm:h-[2rem]">
           {product.name}
         </h3>
 
@@ -542,21 +542,22 @@ function ProductCard({ product }: { product: Product }) {
             </span>
           ))}
         <span className="text-[clamp(0.6rem,1.5vw,0.875rem)] font-satoshi symbol text-gray-600">
-  <span className="font-sans">{product.rating}</span>/5
+    <span className="font-Satoshi symbol font-Medium text-[#000000]">{product.rating}</span>
+<span className="font-Satoshi text-gray-500 font-light ml-1">/5</span>
 </span>
 
         </div>
 
-        <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-Satoshi font-bold">
+        <div className="mt-auto h-[1.5rem] sm:h-[2rem] flex items-center gap-2 font-Satoshi font-bold">  
           {product.oldPrice ? (
             <>
-              <span className="text-black text-[clamp(0.7rem,3vw,1.2rem)] font-Satoshi font-bold">
+              <span className="text-black text-[clamp(0.7rem,3vw,1.6rem)] font-Satoshi font-bold">
                 ${product.price}
               </span>
-              <span className="line-through text-gray-400 text-[clamp(0.7rem,3vw,1.2rem)] font-Satoshi font-bold">
+              <span className="line-through text-gray-400 text-[clamp(0.7rem,3vw,1.6rem)] font-Satoshi font-bold">
                 ${product.oldPrice}
               </span>
-              <span className="bg-red-100 text-red-500  px-3 py-1 rounded-full text-[clamp(0.4rem,2vw,0.7rem)] font-satoshi font-light">
+              <span className="bg-red-100 text-red-500  px-3 py-1 rounded-full text-[clamp(0.4rem,2vw,0.8rem)] font-Satoshi font-Regular">
                 {Math.round(
                   ((Number(product.oldPrice) - Number(product.price)) /
                     Number(product.oldPrice)) *
@@ -566,7 +567,7 @@ function ProductCard({ product }: { product: Product }) {
               </span>
             </>
           ) : (
-            <span className="text-black  font-Satoshi font-bold   text-[clamp(0.7rem,3vw,1.2rem)]">
+            <span className="text-black  font-Satoshi font-bold   text-[clamp(0.7rem,3vw,1.6rem)]">
               ${product.price}
             </span>
           )}
